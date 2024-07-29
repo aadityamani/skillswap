@@ -19,23 +19,23 @@ const LandingPage = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "#2D2D2D",
+    backgroundColor: "var(--grey)",
   };
 
   const titleContainerStyle = {
     display: "flex",
-    backgroundColor: "#2D2D2D",
+    backgroundColor: "var(--grey)",
     padding: "20px",
     margin: "100px",
     marginTop: "300px",
     justifyContent: "center",
     alignItems: "center",
-    border: "10px solid #3BB4A1",
+    border: "10px solid var(--cyan)",
   };
 
   const titleStyle = {
     fontFamily: "Josefin Sans, sans-serif",
-    color: "#3BB4A1",
+    color: "var(--cyan)",
     fontWeight: 700,
     fontSize: "5.5rem",
     textAlign: "center",
@@ -43,9 +43,9 @@ const LandingPage = () => {
 
   const contentTitleStyle = {
     textAlign: "center",
-    color: "#2d2d2d",
-    fontFamily: "Oswald",
-    backgroundColor: "#3BB4A1",
+    color: "var(--grey)",
+    fontFamily: "var(--basefont)",
+    backgroundColor: "var(--cyan)",
     width: "100%",
     fontSize: "4rem",
     fontWeight: 700,
@@ -53,7 +53,7 @@ const LandingPage = () => {
   };
 
   const descriptionStyle = {
-    fontFamily: "Montserrat, sans-serif",
+    fontFamily: "var(--secfont)",
     fontSize: "1.2rem",
     textAlign: "center",
     color: "white",
@@ -62,7 +62,7 @@ const LandingPage = () => {
   };
 
   const buttonStyle = {
-    backgroundColor: "#3BB4A1",
+    backgroundColor: "var(--cyan)",
     color: "white",
     border: "none",
     padding: "12px 24px",
@@ -115,29 +115,29 @@ const LandingPage = () => {
           <br />
           <br />
           <br />
-          <h4 style={{ color: "#028477" }}>➊ Learn From Experts:</h4> Gain insights and practical knowledge directly
+          <h4 style={{ color: "var(--teal)" }}>➊ Learn From Experts:</h4> Gain insights and practical knowledge directly
           from experienced mentors who excel in their respective fields. Whether it's mastering a new programming
           language, honing your culinary skills, or delving into the world of digital marketing, our mentors are here to
           guide you every step of the way.
           <br />
           <br />
-          <h4 style={{ color: "#028477" }}>➋ Share Your Expertise:</h4> Have a skill or passion you're eager to share?
+          <h4 style={{ color: "var(--teal)" }}>➋ Share Your Expertise:</h4> Have a skill or passion you're eager to share?
           Skill Swap provides a platform for you to become a mentor yourself. Share your expertise with others, foster a
           sense of community, and contribute to the growth of aspiring learners.
           <br />
           <br />
-          <h4 style={{ color: "#028477" }}>➌ Collaborative Environment:</h4> Our community thrives on collaboration.
+          <h4 style={{ color: "var(--teal)" }}>➌ Collaborative Environment:</h4> Our community thrives on collaboration.
           Connect with like-minded individuals, participate in group projects, and engage in discussions that fuel
           creativity and innovation. Skill Swap isn't just about individual growth—it's about collective advancement.
           <br />
           <br />
-          <h4 style={{ color: "#028477" }}>➍ Diverse Learning Opportunities:</h4> With Skill Swap, the possibilities are
+          <h4 style={{ color: "var(--teal)" }}>➍ Diverse Learning Opportunities:</h4> With Skill Swap, the possibilities are
           endless and <b>free of cost</b>. Explore a wide range of topics and disciplines, from traditional crafts to
           cutting-edge technologies. Our diverse library of skills ensures there's something for everyone, regardless of
           your interests or background.
           <br />
           <br />
-          <h4 style={{ color: "#028477" }}>➎ Continuous Growth:</h4> Learning is a lifelong journey, and Skill Swap is
+          <h4 style={{ color: "var(--teal)" }}>➎ Continuous Growth:</h4> Learning is a lifelong journey, and Skill Swap is
           here to support you every step of the way. Whether you're a novice or a seasoned professional, our platform
           empowers you to continuously expand your knowledge, challenge yourself, and embrace new opportunities.
         </div>

@@ -410,7 +410,7 @@ const Register = () => {
 
   return (
     <div className="register_page ">
-      <h1 className="m-4" style={{ fontFamily: "Oswald", color: "#3BB4A1" }}>
+      <h1 className="m-4" style={{ fontFamily: "var(--basefont)", color: "var(--cyan)" }}>
         Registration Form
       </h1>
       {loading ? (
@@ -429,7 +429,7 @@ const Register = () => {
             <Tab eventKey="registration" title="Registration">
               {/* Name */}
               <div>
-                <label style={{ color: "#3BB4A1" }}>Name</label>
+                <label style={{ color: "var(--cyan)" }}>Name</label>
                 <br />
                 <input
                   type="text"
@@ -437,7 +437,7 @@ const Register = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid #3BB4A1",
+                    border: "1px solid var(--cyan)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -447,7 +447,7 @@ const Register = () => {
               </div>
               {/* Email */}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "var(--cyan)" }}>
                   Email
                 </label>
                 <br />
@@ -457,7 +457,7 @@ const Register = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid #3BB4A1",
+                    border: "1px solid var(--cyan)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -467,7 +467,7 @@ const Register = () => {
               </div>
               {/* Username */}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "var(--cyan)" }}>
                   Username
                 </label>
                 <br />
@@ -478,7 +478,7 @@ const Register = () => {
                   value={form.username}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid #3BB4A1",
+                    border: "1px solid var(--cyan)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -487,7 +487,7 @@ const Register = () => {
               </div>
               {/* Linkedin Profile Link*/}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "var(--cyan)" }}>
                   Linkedin Link
                 </label>
                 <br />
@@ -498,7 +498,7 @@ const Register = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid #3BB4A1",
+                    border: "1px solid var(--cyan)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -507,7 +507,7 @@ const Register = () => {
               </div>
               {/* Github Profile Link*/}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "var(--cyan)" }}>
                   Github Link
                 </label>
                 <br />
@@ -518,7 +518,7 @@ const Register = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid #3BB4A1",
+                    border: "1px solid var(--cyan)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -527,7 +527,7 @@ const Register = () => {
               </div>
               {/* Portfolio Link */}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "var(--cyan)" }}>
                   Portfolio Link
                 </label>
                 <br />
@@ -538,7 +538,7 @@ const Register = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid #3BB4A1",
+                    border: "1px solid var(--cyan)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -547,7 +547,7 @@ const Register = () => {
               </div>
               {/* Skills Proficient At */}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "var(--cyan)" }}>
                   Skills Proficient At
                 </label>
                 <br />
@@ -584,7 +584,7 @@ const Register = () => {
               </div>
               {/* Skills to learn */}
               <div>
-                <label style={{ color: "#3BB4A1", marginTop: "20px" }}>Skills To Learn</label>
+                <label style={{ color: "var(--cyan)", marginTop: "20px" }}>Skills To Learn</label>
                 <br />
                 <Form.Select
                   aria-label="Default select example"
@@ -636,7 +636,7 @@ const Register = () => {
                       </button>
                     </span>
                   )}
-                  <label style={{ color: "#3BB4A1" }}>Institution Name</label>
+                  <label style={{ color: "var(--cyan)" }}>Institution Name</label>
                   <br />
                   <input
                     type="text"
@@ -645,13 +645,13 @@ const Register = () => {
                     onChange={(e) => handleEducationChange(e, index)}
                     style={{
                       borderRadius: "5px",
-                      border: "1px solid #3BB4A1",
+                      border: "1px solid var(--cyan)",
                       padding: "5px",
                       width: "100%",
                     }}
                     placeholder="Enter your institution name"
                   />
-                  <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
                     Degree
                   </label>
                   <br />
@@ -662,13 +662,13 @@ const Register = () => {
                     onChange={(e) => handleEducationChange(e, index)}
                     style={{
                       borderRadius: "5px",
-                      border: "1px solid #3BB4A1",
+                      border: "1px solid var(--cyan)",
                       padding: "5px",
                       width: "100%",
                     }}
                     placeholder="Enter your degree"
                   />
-                  <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
                     Grade/Percentage
                   </label>
                   <br />
@@ -679,7 +679,7 @@ const Register = () => {
                     onChange={(e) => handleEducationChange(e, index)}
                     style={{
                       borderRadius: "5px",
-                      border: "1px solid #3BB4A1",
+                      border: "1px solid var(--cyan)",
                       padding: "5px",
                       width: "100%",
                     }}
@@ -687,7 +687,7 @@ const Register = () => {
                   />
                   <div className="row w-100">
                     <div className="col-md-6">
-                      <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                      <label className="mt-2" style={{ color: "var(--cyan)" }}>
                         Start Date
                       </label>
                       <br />
@@ -698,14 +698,14 @@ const Register = () => {
                         onChange={(e) => handleEducationChange(e, index)}
                         style={{
                           borderRadius: "5px",
-                          border: "1px solid #3BB4A1",
+                          border: "1px solid var(--cyan)",
                           padding: "5px",
                           width: "100%",
                         }}
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                      <label className="mt-2" style={{ color: "var(--cyan)" }}>
                         End Date
                       </label>
                       <br />
@@ -716,14 +716,14 @@ const Register = () => {
                         onChange={(e) => handleEducationChange(e, index)}
                         style={{
                           borderRadius: "5px",
-                          border: "1px solid #3BB4A1",
+                          border: "1px solid var(--cyan)",
                           padding: "5px",
                           width: "100%",
                         }}
                       />
                     </div>
                   </div>
-                  <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
                     Description
                   </label>
                   <br />
@@ -734,7 +734,7 @@ const Register = () => {
                     onChange={(e) => handleEducationChange(e, index)}
                     style={{
                       borderRadius: "5px",
-                      border: "1px solid #3BB4A1",
+                      border: "1px solid var(--cyan)",
                       padding: "5px",
                       width: "100%",
                     }}
@@ -777,7 +777,7 @@ const Register = () => {
             </Tab>
             <Tab eventKey="longer-tab" title="Additional">
               <div>
-                <label style={{ color: "#3BB4A1", marginTop: "20px" }}>Bio (Max 500 Character)</label>
+                <label style={{ color: "var(--cyan)", marginTop: "20px" }}>Bio (Max 500 Character)</label>
                 <br />
                 <textarea
                   name="bio"
@@ -785,7 +785,7 @@ const Register = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid #3BB4A1",
+                    border: "1px solid var(--cyan)",
                     padding: "5px",
                     width: "100%",
                     marginBottom: "10px",
@@ -794,7 +794,7 @@ const Register = () => {
                 ></textarea>
               </div>
               <div className="">
-                <label style={{ color: "#3BB4A1" }}>Projects</label>
+                <label style={{ color: "var(--cyan)" }}>Projects</label>
 
                 {form.projects.map((project, index) => (
                   <div className="border border-dark rounded-1 p-3 m-1" key={project.id}>
@@ -811,7 +811,7 @@ const Register = () => {
                         cross
                       </button>
                     </span>
-                    <label style={{ color: "#3BB4A1" }}>Title</label>
+                    <label style={{ color: "var(--cyan)" }}>Title</label>
                     <br />
                     <input
                       type="text"
@@ -820,13 +820,13 @@ const Register = () => {
                       onChange={(e) => handleAdditionalChange(e, index)}
                       style={{
                         borderRadius: "5px",
-                        border: "1px solid #3BB4A1",
+                        border: "1px solid var(--cyan)",
                         padding: "5px",
                         width: "100%",
                       }}
                       placeholder="Enter your project title"
                     />
-                    <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
                       Tech Stack
                     </label>
                     <br />
@@ -892,7 +892,7 @@ const Register = () => {
                     </button>
                     <div className="row">
                       <div className="col-md-6">
-                        <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                        <label className="mt-2" style={{ color: "var(--cyan)" }}>
                           Start Date
                         </label>
                         <br />
@@ -903,14 +903,14 @@ const Register = () => {
                           onChange={(e) => handleAdditionalChange(e, index)}
                           style={{
                             borderRadius: "5px",
-                            border: "1px solid #3BB4A1",
+                            border: "1px solid var(--cyan)",
                             padding: "5px",
                             width: "100%",
                           }}
                         />
                       </div>
                       <div className="col-md-6">
-                        <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                        <label className="mt-2" style={{ color: "var(--cyan)" }}>
                           End Date
                         </label>
                         <br />
@@ -921,14 +921,14 @@ const Register = () => {
                           onChange={(e) => handleAdditionalChange(e, index)}
                           style={{
                             borderRadius: "5px",
-                            border: "1px solid #3BB4A1",
+                            border: "1px solid var(--cyan)",
                             padding: "5px",
                             width: "100%",
                           }}
                         />
                       </div>
                     </div>
-                    <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
                       Project Link
                     </label>
                     <br />
@@ -939,14 +939,14 @@ const Register = () => {
                       onChange={(e) => handleAdditionalChange(e, index)}
                       style={{
                         borderRadius: "5px",
-                        border: "1px solid #3BB4A1",
+                        border: "1px solid var(--cyan)",
                         padding: "5px",
                         width: "100%",
                       }}
                       placeholder="Enter your project link"
                     />
 
-                    <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
                       Description
                     </label>
                     <br />
@@ -957,7 +957,7 @@ const Register = () => {
                       onChange={(e) => handleAdditionalChange(e, index)}
                       style={{
                         borderRadius: "5px",
-                        border: "1px solid #3BB4A1",
+                        border: "1px solid var(--cyan)",
                         padding: "5px",
                         width: "100%",
                       }}
@@ -1005,10 +1005,10 @@ const Register = () => {
             </Tab>
             <Tab eventKey="Preview" title="Confirm Details">
               <div>
-                <h3 style={{ color: "#3BB4A1", marginBottom: "20px" }} className="link w-100 text-center">
+                <h3 style={{ color: "var(--cyan)", marginBottom: "20px" }} className="link w-100 text-center">
                   Preview of the Form
                 </h3>
-                <div className="previewForm" style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d", marginBottom: "20px" }}>
+                <div className="previewForm" style={{ fontFamily: "var(--secfont)", color: "var(--grey)", marginBottom: "20px" }}>
                   <div
                     style={{
                       display: "flex",
@@ -1019,7 +1019,7 @@ const Register = () => {
                     }}
                     className="link m-sm-0"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Name:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Name:</span>
                     <span style={{ flex: 2 }}>{form.name || "Yet to be filled"}</span>
                   </div>
                   <div
@@ -1032,7 +1032,7 @@ const Register = () => {
                     }}
                     className="link"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Email ID:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Email ID:</span>
                     <span style={{ flex: 2 }}>{form.email || "Yet to be filled"}</span>
                   </div>
                   <div
@@ -1045,7 +1045,7 @@ const Register = () => {
                     }}
                     className="link"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Username:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Username:</span>
                     <span style={{ flex: 2 }}>{form.username || "Yet to be filled"}</span>
                   </div>
                   <div
@@ -1058,7 +1058,7 @@ const Register = () => {
                     }}
                     className="link"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Portfolio Link:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Portfolio Link:</span>
                     <span style={{ flex: 2 }}>{form.portfolioLink || "Yet to be filled"}</span>
                   </div>
                   <div
@@ -1071,7 +1071,7 @@ const Register = () => {
                     }}
                     className="link"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Github Link:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Github Link:</span>
                     <span style={{ flex: 2 }}>{form.githubLink || "Yet to be filled"}</span>
                   </div>
                   <div
@@ -1085,7 +1085,7 @@ const Register = () => {
                     }}
                     className="link"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Linkedin Link:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Linkedin Link:</span>
                     <span
                       style={{
                         width: "70vw",
@@ -1110,7 +1110,7 @@ const Register = () => {
                     }}
                     className="link"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Skills Proficient At:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Skills Proficient At:</span>
                     <span style={{ flex: 2 }}>{form.skillsProficientAt.join(", ") || "Yet to be filled"}</span>
                   </div>
                   <div
@@ -1123,7 +1123,7 @@ const Register = () => {
                     }}
                     className="link"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Skills To Learn:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Skills To Learn:</span>
                     <span style={{ flex: 2 }}>{form.skillsToLearn.join(", ") || "Yet to be filled"}</span>
                   </div>
 
@@ -1137,7 +1137,7 @@ const Register = () => {
                     }}
                     className="link"
                   >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Bio:</span>
+                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Bio:</span>
                     <span style={{ flex: 2 }}>{form.bio || "Yet to be filled"}</span>
                   </div>
                 </div>
@@ -1145,7 +1145,7 @@ const Register = () => {
                   <button
                     onClick={handleSubmit}
                     style={{
-                      backgroundColor: "#3BB4A1",
+                      backgroundColor: "var(--cyan)",
                       color: "white",
                       padding: "10px 20px",
                       border: "none",

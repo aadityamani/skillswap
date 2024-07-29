@@ -285,7 +285,7 @@ const Chats = () => {
                 borderRight: showChatHistory ? "1px solid lightgrey" : "1px solid lightgrey",
                 borderLeft: showChatHistory ? "1px solid lightgrey" : "1px solid lightgrey",
                 borderBottom: "none",
-                backgroundColor: showChatHistory ? "#3bb4a1" : "#2d2d2d",
+                backgroundColor: showChatHistory ? "var(--cyan)" : "var(--grey)",
                 color: showChatHistory ? "black" : "white",
                 cursor: "pointer",
                 minWidth: "150px",
@@ -304,7 +304,7 @@ const Chats = () => {
                 borderRight: showRequests ? "1px solid lightgrey" : "1px solid lightgrey",
                 borderLeft: showRequests ? "1px solid lightgrey" : "1px solid lightgrey",
                 borderBottom: "none",
-                backgroundColor: showChatHistory ? "#2d2d2d" : "#3bb4a1",
+                backgroundColor: showChatHistory ? "var(--grey)" : "var(--cyan)",
                 color: showChatHistory ? "white" : "black",
                 cursor: "pointer",
                 minWidth: "150px",
@@ -335,7 +335,7 @@ const Chats = () => {
                           cursor: "pointer",
                           marginBottom: "10px",
                           padding: "10px",
-                          backgroundColor: selectedChat?.id === chat?.id ? "#3BB4A1" : "lightgrey",
+                          backgroundColor: selectedChat?.id === chat?.id ? "var(--cyan)" : "lightgrey",
                           borderRadius: "5px",
                         }}
                       >
@@ -365,7 +365,7 @@ const Chats = () => {
                           marginBottom: "10px",
                           padding: "10px",
                           backgroundColor:
-                            selectedRequest && selectedRequest.id === request.id ? "#3BB4A1" : "lightgrey",
+                            selectedRequest && selectedRequest.id === request.id ? "var(--cyan)" : "lightgrey",
                           borderRadius: "5px",
                         }}
                       >
@@ -423,7 +423,7 @@ const Chats = () => {
               display: "flex",
               justifyContent: "space-between",
               padding: "10px",
-              borderBottom: "1px solid #2d2d2d",
+              borderBottom: "1px solid var(--grey)",
               minHeight: "50px",
             }}
           >
@@ -436,7 +436,7 @@ const Chats = () => {
                     alt="Profile"
                     style={{ width: "40px", height: "40px", borderRadius: "50%", marginRight: "10px" }}
                   />
-                  <span style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d" }}>
+                  <span style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
                     {selectedChat?.username}
                   </span>
                 </div>
@@ -455,7 +455,7 @@ const Chats = () => {
             <div
               style={{
                 height: "calc(100% - 50px)",
-                color: "#3BB4A1",
+                color: "var(--cyan)",
                 padding: "20px",
                 overflowY: "auto",
                 position: "relative",
@@ -477,8 +477,8 @@ const Chats = () => {
                       >
                         <div
                           style={{
-                            backgroundColor: message.sender._id === user._id ? "#3BB4A1" : "#2d2d2d",
-                            color: "#ffffff",
+                            backgroundColor: message.sender._id === user._id ? "var(--cyan)" : "var(--grey)",
+                            color: "var(--white)",
                             padding: "10px",
                             borderRadius: "10px",
                             maxWidth: "70%",
@@ -517,7 +517,7 @@ const Chats = () => {
                   left: "0",
                   right: "0",
                   padding: "10px",
-                  borderTop: "1px solid #2d2d2d",
+                  borderTop: "1px solid var(--grey)",
                   display: "flex",
                   alignItems: "center",
                 }}
@@ -532,7 +532,7 @@ const Chats = () => {
                     padding: "10px",
                     borderRadius: "5px",
                     marginRight: "10px",
-                    border: "1px solid #2d2d2d",
+                    border: "1px solid var(--grey)",
                   }}
                 />
                 <Button variant="success" style={{ padding: "10px 20px", borderRadius: "5px" }} onClick={sendMessage}>
@@ -563,8 +563,8 @@ const Chats = () => {
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              backgroundColor: "#2d2d2d",
-              color: "#3BB4A1",
+              backgroundColor: "var(--grey)",
+              color: "var(--cyan)",
               padding: "50px",
               borderRadius: "10px",
               zIndex: "1001",
