@@ -5,7 +5,7 @@ const containerStyle = {
   display: "flex",
   flexDirection: "row",
   alignItems: "start",
-  backgroundColor: "#2D2D2D",
+  backgroundColor: "var(--grey)",
   justifyContent: "center",
 };
 
@@ -16,8 +16,8 @@ const contentContainerStyle = {
 };
 
 const titleStyle = {
-  fontFamily: "Oswald, sans-serif",
-  color: "#FBF1A4",
+  fontFamily: "var(--basefont)",
+  color: "var(--yellow)",
   fontSize: "3rem",
   fontWeight: "bold",
   marginBottom: "20px",
@@ -25,8 +25,8 @@ const titleStyle = {
 };
 
 const descriptionStyle = {
-  fontFamily: "Montserrat, sans-serif",
-  color: "#f2efdb",
+  fontFamily: "var(--secfont)",
+  color: "var(--yellowish-white)",
   fontSize: "1rem",
   lineHeight: "1.6",
   textAlign: "left",

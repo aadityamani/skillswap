@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2d2d2d;
+  background-color: var(--grey);
   min-height: 100vh;
   min-width: 70vw;
 }
@@ -10,8 +10,8 @@
 .form-container h1 {
   padding: 3rem;
   text-align: center;
-  color: #f56664 !important;
-  font-family: "Montserrat", sans-serif;
+  color: var(--red) !important;
+  font-family: var(--secfont);
 }
 
 .form-group {
@@ -20,7 +20,7 @@
 }
 
 .form-box {
-  background-color: #f1f1f1;
+  background-color: var(--white-1);
   padding: 1rem;
   min-width: 70vw;
   margin: 5rem;
@@ -29,18 +29,18 @@
 }
 
 .question {
-  color: #087464 !important;
+  color: var(--forest-teal) !important;
   margin-bottom: 0.6rem;
   margin-top: 1rem;
 }
 
 .form-group label {
-  color: #2d2d2d;
+  color: var(--grey);
 }
 
 .form-control {
-  background-color: #f1f1f1;
-  border: 1px solid #3bb4a1;
+  background-color: var(--white-1);
+  border: 1px solid var(--cyan);
   border-radius: 5px;
   padding: 10px;
   width: 70%;
@@ -66,8 +66,8 @@
 }
 
 .submit-button {
-  background-color: #3bb4a1;
-  color: #ffffff;
+  background-color: var(--cyan);
+  color: var(--white);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -75,7 +75,7 @@
 }
 
 .submit-button:hover {
-  background-color: #013e38;
+  background-color: var(--dark-cyan);
 }
 
 @media (max-width: 768px) {

@@ -8,18 +8,7 @@
 html,
 body {
   height: 100%;
-  background-color: #2d2d2d;
-}
-
-:root {
-  --cyan: #3bb4a1;
-  --light-grey: #6d6e70;
-  --grey: #2d2d2d;
-  --yellow: #fbf1a4;
-  --dark-cyan: #013e38;
-  --red: #f56664;
-  --basefont: "Oswald", sans-serif;
-  --secfont: "Montserrat", sans-serif;
+  background-color: var(--grey);
 }
 
 body {
@@ -29,13 +18,13 @@ body {
   text-align: center;
 }
 ::-webkit-scrollbar-track {
-  border: 5px solid #00211e;
-  background-color: #00211e;
+  border: 5px solid var(--dark-teal);
+  background-color: var(--dark-teal);
 }
 
 ::-webkit-scrollbar {
   width: 3px;
-  background-color: #00211e;
+  background-color: var(--dark-teal);
 }
 
 ::-webkit-scrollbar-thumb {

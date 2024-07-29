@@ -122,9 +122,9 @@ const Header = () => {
 
   return (
     <>
-      <Navbar key="md" expand="md" className="bg-body-primary" style={{ backgroundColor: "#3BB4A1", zIndex: 998 }}>
+      <Navbar key="md" expand="md" className="bg-body-primary" style={{ backgroundColor: "var(--cyan)", zIndex: 998 }}>
         <Container fluid>
-          <Navbar.Brand href="/" style={{ fontFamily: "Josefin Sans, sans-serif", color: "#2d2d2d", fontWeight: 500 }}>
+          <Navbar.Brand href="/" style={{ fontFamily: "Josefin Sans, sans-serif", color: "var(--grey)", fontWeight: 500 }}>
             SKILL SWAP
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
@@ -136,14 +136,14 @@ const Header = () => {
             <Offcanvas.Header closeButton>
               <Offcanvas.Title
                 id={`offcanvasNavbarLabel-expand-md`}
-                style={{ fontFamily: "Josefin Sans, sans-serif", color: "#028477" }}
+                style={{ fontFamily: "Josefin Sans, sans-serif", color: "var(--teal)" }}
               >
                 SKILL SWAP
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/" style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d" }}>
+                <Nav.Link as={Link} to="/" style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
                   Home
                 </Nav.Link>
                 {navUser !== null ? (
@@ -151,21 +151,20 @@ const Header = () => {
                     <Nav.Link
                       as={Link}
                       to="/discover"
-                      style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d" }}
+                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
                     >
                       Discover
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/chats" style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d" }}>
+                    <Nav.Link as={Link} to="/chats" style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
                       Your Chats
                     </Nav.Link>
-                    {/* Paakhi discover page ke links yeha dalde please */}
                     {discover && (
                       <>
                         <Nav.Link
                           href="#for-you"
                           style={{
-                            fontFamily: "Montserrat, sans-serif",
-                            color: "#f56664",
+                            fontFamily: "var(--secfont)",
+                            color: "var(--red)",
                             fontSize: "1.2rem",
                             marginTop: "2rem",
                           }}
@@ -175,35 +174,35 @@ const Header = () => {
                         </Nav.Link>
                         <Nav.Link
                           href="#popular"
-                          style={{ fontFamily: "Montserrat, sans-serif", color: "#3bb4a1", fontSize: "1.2rem" }}
+                          style={{ fontFamily: "var(--secfont)", color: "var(--cyan)", fontSize: "1.2rem" }}
                           className="d-md-none"
                         >
                           Popular
                         </Nav.Link>
                         <Nav.Link
                           href="#web-development"
-                          style={{ fontFamily: "Montserrat, sans-serif", color: "#013e38", marginLeft: "1.5rem" }}
+                          style={{ fontFamily: "var(--secfont)", color: "var(--dark-cyan)", marginLeft: "1.5rem" }}
                           className="d-md-none"
                         >
                           Web Development
                         </Nav.Link>
                         <Nav.Link
                           href="#machine-learning"
-                          style={{ fontFamily: "Montserrat, sans-serif", color: "#013e38", marginLeft: "1.5rem" }}
+                          style={{ fontFamily: "var(--secfont)", color: "var(--dark-cyan)", marginLeft: "1.5rem" }}
                           className="d-md-none"
                         >
                           Machine Learning
                         </Nav.Link>
                         <Nav.Link
                           href="#others"
-                          style={{ fontFamily: "Montserrat, sans-serif", color: "#013e38", marginLeft: "1.5rem" }}
+                          style={{ fontFamily: "var(--secfont)", color: "var(--dark-cyan)", marginLeft: "1.5rem" }}
                           className="d-md-none"
                         >
                           Others
                         </Nav.Link>
                       </>
                     )}
-                    <Nav.Link as={Dropdown} style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d" }}>
+                    <Nav.Link as={Dropdown} style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
                       <UserProfileDropdown />
                     </Nav.Link>
                   </>
@@ -212,18 +211,18 @@ const Header = () => {
                     <Nav.Link
                       as={Link}
                       to="/about_us"
-                      style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d" }}
+                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
                     >
                       About Us
                     </Nav.Link>
                     <Nav.Link
                       as={Link}
                       to="/#why-skill-swap"
-                      style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d" }}
+                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
                     >
                       Why SkillSwap
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/login" style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d" }}>
+                    <Nav.Link as={Link} to="/login" style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
                       Login/Register
                     </Nav.Link>
                   </>

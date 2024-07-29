@@ -1,9 +1,9 @@
 .container-overall {
-  background-color: #2d2d2d;
+  background-color: var(--grey);
   min-height: 90vh;
-  font-family: Montserrat, sans-serif;
+  font-family: var(--secfont);
   color: white;
-  border-right: 1px solid #3bb4a1;
+  border-right: 1px solid var(--cyan);
 }
 
 .container-right {
@@ -13,7 +13,7 @@
 
 .container-left {
   flex: 3;
-  background-color: #2d2d2d;
+  background-color: var(--grey);
   min-height: 90vh;
 }
 
@@ -21,7 +21,7 @@
   display: flex;
   padding-top: 2rem;
   justify-content: space-around;
-  border-bottom: 1px solid #3bb4a1;
+  border-bottom: 1px solid var(--cyan);
 }
 
 .chat-list {
@@ -43,8 +43,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #2d2d2d;
-  color: #3bb4a1;
+  background-color: var(--grey);
+  color: var(--cyan);
   padding: 50px;
   border-radius: 10px;
   margin: 5rem;
@@ -59,8 +59,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #2d2d2d;
-  color: #3bb4a1;
+  background-color: var(--grey);
+  color: var(--cyan);
   padding: 50px;
   border-radius: 10px;
 }

@@ -12,10 +12,10 @@
 }
 
 .profile-container {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--secfont);
   color: white;
   padding: 20px;
-  background-color: #2d2d2d;
+  background-color: var(--grey);
 }
 
 .profile-photo img {
@@ -52,7 +52,7 @@
   margin-left: 2rem;
   border: none;
   border-radius: 5px;
-  background-color: #3bb4a1;
+  background-color: var(--cyan);
   color: white;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -60,7 +60,7 @@
 
 .connect-button:hover {
   background-color: white;
-  color: #3bb4a1;
+  color: var(--cyan);
 }
 
 .report-button {
@@ -70,7 +70,7 @@
   margin-left: 2rem;
   border: none;
   border-radius: 5px;
-  background-color: #f56664;
+  background-color: var(--red);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -91,7 +91,7 @@
   margin-bottom: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #013e38;
+  background-color: var(--dark-cyan);
   color: white;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -99,11 +99,11 @@
 
 .edit-button:hover {
   background-color: white;
-  color: #013e38;
+  color: var(--dark-cyan);
 }
 
 h2 {
-  color: #8adfd1 !important;
+  color: var(--seafoam) !important;
 }
 
 .bio {
@@ -140,7 +140,7 @@ h2 {
 }
 
 .skill-box {
-  background-color: #9c955c;
+  background-color: var(--sand-yellow);
   color: white;
   padding: 5px 10px;
   margin-right: 10px;

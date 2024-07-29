@@ -15,10 +15,16 @@ import EditProfile from "./Pages/EditProfile/EditProfile";
 import PrivateRoutes from "./util/PrivateRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useContext } from "react";
+import { ThemeContext } from "./util/theme";
+import "./App.css";
 
 const App = () => {
+  const [{ themeName }] = useContext(ThemeContext)
+
   return (
-    <>
+    <div className={themeName}>
+      {/* <div style={{ background: 'var(--clr-primary)' }}>Hello</div> */}
       <Header />
       <ToastContainer position="top-right" />
       <Routes>
@@ -38,7 +44,7 @@ const App = () => {
       </Routes>
 
       <Footer />
-    </>
+    </div>
   );
 };
 
