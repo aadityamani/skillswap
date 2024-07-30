@@ -7,6 +7,10 @@ import { UnRegisteredUser } from "../models/unRegisteredUser.model.js";
 import { generateJWTToken_username } from "../utils/generateJWTToken.js";
 import { uploadOnCloudinary } from "../config/connectCloudinary.js";
 import { sendMail } from "../utils/SendMail.js";
+import { Meeting } from "../models/meeting.model.js";
+import { google } from 'googleapis';
+import { OAuth2Client } from 'google-auth-library';
+import { confirmedMeetingBody, scheduleMeetingBody } from "../utils/constants.js";
 
 export const userDetailsWithoutID = asyncHandler(async (req, res) => {
   console.log("\n******** Inside userDetailsWithoutID Controller function ********");
@@ -260,9 +264,11 @@ export const registerUser = async (req, res) => {
     throw new ApiError(400, "Username already exists");
   }
 
+  const user = await UnRegisteredUser.findOneAndDelete({ email: email });
   const newUser = await User.create({
     name: name,
     email: email,
+    token: user.token,
     username: username,
     linkedinLink: linkedinLink,
     githubLink: githubLink,
@@ -607,10 +613,78 @@ export const sendScheduleMeet = asyncHandler(async (req, res) => {
   }
 
   const to = user.email;
-  const subject = "Request for Scheduling a meeting";
-  const message = `${req.user.name} has requested for a meet at ${time} time on ${date} date. Please respond to the request.`;
+  const startDateTime = new Date(date + " " + time);
+  const endDateTime = new Date(startDateTime.getTime() + 2 * 60 * 60 * 1000);
 
-  await sendMail(to, subject, message);
+  const event = {
+    summary: "SkillSwap Session",
+    description: "",
+    start: { dateTime: startDateTime.toISOString(), timeZone: "Asia/Kolkata" },
+    end: { dateTime: endDateTime.toISOString(), timeZone: "Asia/Kolkata" },
+    attendees: [
+      { email: to },
+      { email: req.user.email }
+    ],
+    conferenceData: {
+      createRequest: {
+        requestId: new Date().getTime(),
+        conferenceSolutionKey: {
+          type: "hangoutsMeet"
+        }
+      }
+    }
+  };
+
+  const meeting = await Meeting.create({
+    fromId: req.user._id,
+    toId: user._id,
+    summary: event,
+    schedule: {date, time}
+  })
+
+  await sendMail(to, "Request for Scheduling a meeting", scheduleMeetingBody(user.name, req.user.name, date, time, meeting));
 
   return res.status(200).json(new ApiResponse(200, null, "Email sent successfully"));
 });
+
+export const scheduleMeet = asyncHandler(async (req, res) => {
+  console.log("******** Inside scheduleMeet Function *******");
+
+  const meeting = await Meeting.findById(req.query.id);
+  
+  const fromUser = await User.findById(meeting.fromId);
+  const oAuth2ClientUser = await authenticate(fromUser.token);
+  const calendarUser = google.calendar({ version: "v3", auth: oAuth2ClientUser });
+
+  await calendarUser.events.insert({
+    calendarId: "primary",
+    resource: meeting.summary,
+    sendUpdates: "all",
+    conferenceDataVersion: 1
+  });
+
+  const toUser = await User.findById(meeting.toId);
+  const { date, time } = meeting.schedule;
+  await sendMail(fromUser.email, "Meeting Scheduled", confirmedMeetingBody(fromUser.name, toUser.name, date, time));
+
+  await Meeting.deleteOne({ _id: meeting._id });
+
+  res.send("Meeting scheduled successfully");
+});
+
+async function authenticate(token) {
+  const clientID = process.env.GOOGLE_CLIENT_ID;
+  const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+  const callbackURL = "/auth/google/callback";
+  const oAuth2Client = new OAuth2Client(clientID, clientSecret, callbackURL);
+  
+  try {
+    oAuth2Client.setCredentials(token);
+  } catch (error) {
+    console.log(error)
+    return;
+    // TODO refresh token if expired
+    // await getNewToken(oAuth2Client, tokenPath);
+  }
+  return oAuth2Client;
+}

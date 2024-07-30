@@ -16,15 +16,26 @@ passport.use(
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "/auth/google/callback",
+      userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
+      passReqToCallback: true,
+      accessType: 'offline',
+      prompt: 'consent',
     },
-    async (accessToken, refreshToken, profile, done) => {
+    async (req, accessToken, refreshToken, profile, done) => {
+      profile.token = {
+        access_token: accessToken,
+        refresh_token: refreshToken,
+        scope: ["email", "profile", "https://www.googleapis.com/auth/calendar.events"]
+      };
       done(null, profile);
     }
   )
 );
 
 export const googleAuthHandler = passport.authenticate("google", {
-  scope: ["profile", "email"],
+  scope: ["profile", "email", "https://www.googleapis.com/auth/calendar.events"],
+  accessType: 'offline',
+  prompt: 'consent'
 });
 
 export const googleAuthCallback = passport.authenticate("google", {
@@ -39,6 +50,8 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
   const existingUser = await User.findOne({ email: req.user._json.email });
 
   if (existingUser) {
+    existingUser.token = req.user.token;
+    await existingUser.save();
     const jwtToken = generateJWTToken_username(existingUser);
     const expiryDate = new Date(Date.now() + 1 * 60 * 60 * 1000);
     res.cookie("accessToken", jwtToken, { httpOnly: true, expires: expiryDate, secure: false });
@@ -52,6 +65,7 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
       name: req.user._json.name,
       email: req.user._json.email,
       picture: req.user._json.picture,
+      token: req.user.token,
     });
   }
   const jwtToken = generateJWTToken_email(unregisteredUser);
