@@ -1,0 +1,45 @@
+.light {
+	--white: #ffffff;
+	--cyan: #3bb4a1;
+	--light-grey: #6d6e70;
+	--grey: #2d2d2d;
+	--yellow: #fbf1a4;
+	--dark-cyan: #013e38;
+	--red: #f56664;
+	--basefont: "Oswald", sans-serif;
+	--secfont: "Montserrat", sans-serif;
+
+	--dark-teal: #00211e;
+	--forest-teal: #087464;
+	--teal: #028477;
+	--yellowish-white: #f2efdb;
+	--bluish-white: #b3c2cd;
+	--grass-green: #809c5c;
+	--black-1: #1a1a1a;
+	--dark-silver: #6d706f;
+	--white-1: #f0f0f0;
+	--light-pink: #fcaaa8;
+	--brown: #5c4242;
+	--light-teal: #5c9c94;
+	--seafoam: #8adfd1;
+	--sand-yellow: #9c955c;
+
+
+	--clr-bg: #fcfcfc;
+	--clr-bg-alt: #fcfcfc;
+	--clr-bg-tl: #007da0;
+	--clr-fg: #555;
+	--clr-fg-alt: #303030;
+	--clr-primary: #2978b5;
+	--shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  
+  .dark {
+	--clr-bg: #121212;
+	--clr-bg-alt: #1e1e1e;
+	--clr-bg-tl: #74abf1;
+	--clr-fg: #e0e0e0;
+	--clr-fg-alt: #cfcfcf;
+	--clr-primary: #2978b5;
+	--shadow: rgba(0, 0, 0, 0.5) 0px 7px 29px 0px;
+  }

@@ -1,14 +1,3 @@
-:root {
-  --cyan: #3bb4a1;
-  --light-grey: #6d6e70;
-  --grey: #2d2d2d;
-  --yellow: #fbf1a4;
-  --dark-cyan: #013e38;
-  --red: #f56664;
-  --basefont: "Oswald", sans-serif;
-  --secfont: "Montserrat", sans-serif;
-}
-
 h3 {
   font-family: var(--secfont);
   margin: 10px 0;
@@ -36,7 +25,7 @@ p {
   background-color: #00000050;
   border-radius: 25px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.35);
-  color: #b3c2cd;
+  color: var(--bluish-white);
   position: relative;
   width: 300px;
   min-width: 300px;
@@ -48,7 +37,7 @@ p {
 }
 
 .card-container img {
-  border: 1px solid #fbf1a4;
+  border: 1px solid var(--yellow);
   border-radius: 50%;
   padding: 7px;
   height: 100px;
@@ -64,11 +53,11 @@ p {
 
 button.primary {
   margin: 1rem;
-  background-color: #3bb4a1;
-  border: 1px solid #3bb4a1;
+  background-color: var(--cyan);
+  border: 1px solid var(--cyan);
   border-radius: 3px;
-  color: #fff;
-  font-family: Montserrat, sans-serif;
+  color: var(--white);
+  font-family: var(--secfont);
   font-weight: 500;
   padding: 0.4rem;
   transition: 0.3s ease-in-out;
@@ -77,13 +66,13 @@ button.primary {
 button.primary.ghost {
   margin: 1rem;
   background-color: transparent;
-  color: #3bb4a1;
+  color: var(--cyan);
   transition: 0.3s ease-in-out;
 }
 
 button.primary:hover {
-  background-color: #fff;
-  color: #3bb4a1;
+  background-color: var(--white);
+  color: var(--cyan);
 }
 
 button.primary.ghost:hover {
@@ -111,7 +100,7 @@ button.primary.ghost:hover {
 
 .profskill-box {
   text-align: center;
-  background-color: #809c5c;
+  background-color: var(--grass-green);
   color: white;
   padding: 0.5rem;
   margin-right: 1rem;

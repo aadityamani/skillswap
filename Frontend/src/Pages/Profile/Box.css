@@ -1,10 +1,10 @@
 .box {
   background-color: white;
-  color: #013e38;
+  color: var(--dark-cyan);
   padding: 10px;
   margin-bottom: 2rem;
   border-radius: 5px;
-  box-shadow: 3px 3px 5px #5c9c94;
+  box-shadow: 3px 3px 5px var(--light-teal);
   width: 100%;
 }
 
@@ -31,7 +31,7 @@
 
 .skill-box {
   text-align: center;
-  background-color: #809c5c;
+  background-color: var(--grass-green);
   color: white;
   margin-right: 1rem;
   border-radius: 5px;

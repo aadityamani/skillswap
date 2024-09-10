@@ -17,26 +17,26 @@ const Login = () => {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#2d2d2d",
+    backgroundColor: "var(--grey)",
   };
 
   const loginBoxStyle = {
     height: "200px",
     display: "flex",
-    backgroundColor: "#2d2d2d",
+    backgroundColor: "var(--grey)",
     flexDirection: "column",
     justifyContent: "space-between",
     padding: "20px",
-    border: "1px solid #fcaaa8", // Border color
+    border: "1px solid var(--light-pink)", // Border color
     borderRadius: "10px",
-    boxShadow: "10px 10px 10px #5c4242",
+    boxShadow: "10px 10px 10px var(--brown)",
     zIndex: "999",
   };
 
   const titleStyle = {
     fontSize: "50px",
-    fontFamily: "Oswald, sans-serif", // Font family
-    color: "#fcaaa8", // Text color
+    fontFamily: "var(--basefont)", // Font family
+    color: "var(--light-pink)", // Text color
     textAlign: "center",
   };
 
@@ -46,9 +46,9 @@ const Login = () => {
   };
 
   const buttonStyle = {
-    backgroundColor: "#f56664", // Button background color
-    color: "#fff", // Button text color
-    fontFamily: "Montserrat",
+    backgroundColor: "var(--red)", // Button background color
+    color: "var(--white)", // Button text color
+    fontFamily: "var(--secfont)",
     border: "none",
     padding: "10px 20px",
     borderRadius: "5px",
@@ -56,9 +56,9 @@ const Login = () => {
   };
 
   const hoverButtonStyle = {
-    backgroundColor: "#fff", // Button background color on hover
-    color: "#f56664", // Button text color on hover
-    fontFamily: "Montserrat",
+    backgroundColor: "var(--white)", // Button background color on hover
+    color: "var(--red)", // Button text color on hover
+    fontFamily: "var(--secfont)",
     border: "none",
     padding: "10px 20px",
     borderRadius: "5px",

@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { UserDetails } from "../controllers/user.controllers.js";
 import { verifyJWT_email, verifyJWT_username } from "../middlewares/verifyJWT.middleware.js";
 import {
+  UserDetails,
   UnRegisteredUserDetails,
   saveRegUnRegisteredUser,
   saveEduUnRegisteredUser,
@@ -14,6 +14,7 @@ import {
   uploadPic,
   discoverUsers,
   sendScheduleMeet,
+  scheduleMeet,
 } from "../controllers/user.controllers.js";
 import { upload } from "../middlewares/multer.middleware.js";
 
@@ -44,5 +45,6 @@ router.route("/discover").get(verifyJWT_username, discoverUsers);
 
 // send schedule meet email
 router.route("/sendScheduleMeet").post(verifyJWT_username, sendScheduleMeet);
+router.route("/scheduleMeet").get(scheduleMeet);
 
 export default router;
