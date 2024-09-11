@@ -62,3 +62,85 @@
   flex: 2;
   margin-left: 20px;
 }
+
+.label {
+  color: var(--cyan) !important;
+}
+
+.input-field {
+  border-radius: 5px;
+  border: 1px solid var(--cyan);
+  padding: 5px;
+  width: 100%;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.ms-1 {
+  margin-start: 0.25rem;
+}
+
+.badge {
+  cursor: pointer;
+}
+
+.button {
+  background-color: var(--cyan) !important;
+  color: white !important;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: var(--cyan) !important;
+  color: white !important;
+}
+
+.button-warning {
+  background-color: orange !important;
+  color: black !important;
+}
+
+.button-disabled {
+  cursor: not-allowed;
+}
+
+.form-select {
+  width: 100%;
+}
+
+.span {
+  display: flex;
+  padding: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.fs-7 {
+  font-size: 0.875rem;
+}
+
+.link {
+  color: var(--cyan);
+}
+
+.previewForm {
+  font-family: var(--secfont);
+  color: var(--grey);
+  margin-bottom: 20px;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
