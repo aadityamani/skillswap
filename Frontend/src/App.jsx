@@ -23,8 +23,7 @@ const App = () => {
   const [{ themeName }] = useContext(ThemeContext)
 
   return (
-    <div className={themeName}>
-      {/* <div style={{ background: 'var(--clr-primary)' }}>Hello</div> */}
+    <div className="light">
       <Header />
       <ToastContainer position="top-right" />
       <Routes>

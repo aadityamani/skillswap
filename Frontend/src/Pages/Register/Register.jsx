@@ -11,6 +11,11 @@ import "./Register.css";
 import Badge from "react-bootstrap/Badge";
 import { v4 as uuidv4 } from "uuid";
 
+import ProfileTab from "../../Components/ProfileTab/Profile"
+import EducationTab from "../../Components/EducationTab/Education"
+import AdditionalTab from "../../Components/AdditionalTab/Additional";
+import PreviewTab from "../../Components/PreviewTab/Preview";
+
 const Register = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
@@ -210,12 +215,23 @@ const Register = () => {
     const { name, value } = e.target;
     console.log("Name", name);
     console.log("Value", value);
-    setForm((prevState) => ({
-      ...prevState,
-      projects: prevState.projects.map((item, i) => (i === index ? { ...item, [name]: value } : item)),
-    }));
+  
+    if (name === 'bio') {
+      setForm((prevState) => ({
+        ...prevState,
+        bio: value,
+      }));
+    } else {
+      setForm((prevState) => ({
+        ...prevState,
+        projects: prevState.projects.map((item, i) =>
+          i === index ? { ...item, [name]: value } : item
+        ),
+      }));
+    }
+  
     console.log("Form: ", form);
-  };
+  };  
 
   const validateRegForm = () => {
     if (!form.username) {
@@ -427,737 +443,50 @@ const Register = () => {
             onSelect={(k) => setActiveKey(k)}
           >
             <Tab eventKey="registration" title="Registration">
-              {/* Name */}
-              <div>
-                <label style={{ color: "var(--cyan)" }}>Name</label>
-                <br />
-                <input
-                  type="text"
-                  name="username"
-                  onChange={handleInputChange}
-                  style={{
-                    borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
-                    padding: "5px",
-                    width: "100%",
-                  }}
-                  value={form.name}
-                  disabled
-                />
-              </div>
-              {/* Email */}
-              <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
-                  Email
-                </label>
-                <br />
-                <input
-                  type="text"
-                  name="username"
-                  onChange={handleInputChange}
-                  style={{
-                    borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
-                    padding: "5px",
-                    width: "100%",
-                  }}
-                  value={form.email}
-                  disabled
-                />
-              </div>
-              {/* Username */}
-              <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
-                  Username
-                </label>
-                <br />
-                <input
-                  type="text"
-                  name="username"
-                  onChange={handleInputChange}
-                  value={form.username}
-                  style={{
-                    borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
-                    padding: "5px",
-                    width: "100%",
-                  }}
-                  placeholder="Enter your username"
-                />
-              </div>
-              {/* Linkedin Profile Link*/}
-              <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
-                  Linkedin Link
-                </label>
-                <br />
-                <input
-                  type="text"
-                  name="linkedinLink"
-                  value={form.linkedinLink}
-                  onChange={handleInputChange}
-                  style={{
-                    borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
-                    padding: "5px",
-                    width: "100%",
-                  }}
-                  placeholder="Enter your Linkedin link"
-                />
-              </div>
-              {/* Github Profile Link*/}
-              <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
-                  Github Link
-                </label>
-                <br />
-                <input
-                  type="text"
-                  name="githubLink"
-                  value={form.githubLink}
-                  onChange={handleInputChange}
-                  style={{
-                    borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
-                    padding: "5px",
-                    width: "100%",
-                  }}
-                  placeholder="Enter your Github link"
-                />
-              </div>
-              {/* Portfolio Link */}
-              <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
-                  Portfolio Link
-                </label>
-                <br />
-                <input
-                  type="text"
-                  name="portfolioLink"
-                  value={form.portfolioLink}
-                  onChange={handleInputChange}
-                  style={{
-                    borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
-                    padding: "5px",
-                    width: "100%",
-                  }}
-                  placeholder="Enter your portfolio link"
-                />
-              </div>
-              {/* Skills Proficient At */}
-              <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
-                  Skills Proficient At
-                </label>
-                <br />
-                <Form.Select
-                  aria-label="Default select example"
-                  value={skillsProficientAt}
-                  onChange={(e) => setSkillsProficientAt(e.target.value)}
-                >
-                  <option>Select some skill</option>
-                  {skills.map((skill, index) => (
-                    <option key={index} value={skill}>
-                      {skill}
-                    </option>
-                  ))}
-                </Form.Select>
-                {form.skillsProficientAt.length > 0 && (
-                  <div>
-                    {form.skillsProficientAt.map((skill, index) => (
-                      <Badge
-                        key={index}
-                        bg="secondary"
-                        className="ms-2 mt-2"
-                        style={{ cursor: "pointer" }}
-                        onClick={(event) => handleRemoveSkill(event, "skills_proficient_at")}
-                      >
-                        <div className="span d-flex p-1 fs-7 ">{skill} &#10005;</div>
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-                <button className="btn btn-primary mt-3 ms-1" name="skill_proficient_at" onClick={handleAddSkill}>
-                  Add Skill
-                </button>
-              </div>
-              {/* Skills to learn */}
-              <div>
-                <label style={{ color: "var(--cyan)", marginTop: "20px" }}>Skills To Learn</label>
-                <br />
-                <Form.Select
-                  aria-label="Default select example"
-                  value={skillsToLearn}
-                  onChange={(e) => setSkillsToLearn(e.target.value)}
-                >
-                  <option>Select some skill</option>
-                  {skills.map((skill, index) => (
-                    <option key={index} value={skill}>
-                      {skill}
-                    </option>
-                  ))}
-                </Form.Select>
-                {form.skillsToLearn.length > 0 && (
-                  <div>
-                    {form.skillsToLearn.map((skill, index) => (
-                      <Badge
-                        key={index}
-                        bg="secondary"
-                        className="ms-2 mt-2 "
-                        style={{ cursor: "pointer" }}
-                        onClick={(event) => handleRemoveSkill(event, "skills_to_learn")}
-                      >
-                        <div className="span d-flex p-1 fs-7 ">{skill} &#10005;</div>
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-                <button className="btn btn-primary mt-3 ms-1" name="skill_to_learn" onClick={handleAddSkill}>
-                  Add Skill
-                </button>
-              </div>
-              <div className="row m-auto d-flex justify-content-center mt-3">
-                <button className="btn btn-warning" onClick={handleSaveRegistration} disabled={saveLoading}>
-                  {saveLoading ? <Spinner animation="border" variant="primary" /> : "Save"}
-                </button>
-                <button onClick={handleNext} className="mt-2 btn btn-primary">
-                  Next
-                </button>
-              </div>
+              {/* Replace the manual fields with the ProfileTab component */}
+              <ProfileTab
+                form={form}
+                handleInputChange={handleInputChange}
+                skillsProficientAt={skillsProficientAt}
+                setSkillsProficientAt={setSkillsProficientAt}
+                skillsToLearn={skillsToLearn}
+                setSkillsToLearn={setSkillsToLearn}
+                skills={skills}
+                handleRemoveSkill={handleRemoveSkill}
+                handleAddSkill={handleAddSkill}
+                handleSaveRegistration={handleSaveRegistration}
+                handleNext={handleNext}
+                saveLoading={saveLoading}
+              />
             </Tab>
             <Tab eventKey="education" title="Education">
-              {form.education.map((edu, index) => (
-                <div className="border border-dark rounded-1 p-3 m-1" key={edu.id}>
-                  {index !== 0 && (
-                    <span className="w-100 d-flex justify-content-end">
-                      <button className="w-25" onClick={(e) => handleRemoveEducation(e, edu.id)}>
-                        cross
-                      </button>
-                    </span>
-                  )}
-                  <label style={{ color: "var(--cyan)" }}>Institution Name</label>
-                  <br />
-                  <input
-                    type="text"
-                    name="institution"
-                    value={edu.institution}
-                    onChange={(e) => handleEducationChange(e, index)}
-                    style={{
-                      borderRadius: "5px",
-                      border: "1px solid var(--cyan)",
-                      padding: "5px",
-                      width: "100%",
-                    }}
-                    placeholder="Enter your institution name"
-                  />
-                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                    Degree
-                  </label>
-                  <br />
-                  <input
-                    type="text"
-                    name="degree"
-                    value={edu.degree}
-                    onChange={(e) => handleEducationChange(e, index)}
-                    style={{
-                      borderRadius: "5px",
-                      border: "1px solid var(--cyan)",
-                      padding: "5px",
-                      width: "100%",
-                    }}
-                    placeholder="Enter your degree"
-                  />
-                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                    Grade/Percentage
-                  </label>
-                  <br />
-                  <input
-                    type="number"
-                    name="score"
-                    value={edu.score}
-                    onChange={(e) => handleEducationChange(e, index)}
-                    style={{
-                      borderRadius: "5px",
-                      border: "1px solid var(--cyan)",
-                      padding: "5px",
-                      width: "100%",
-                    }}
-                    placeholder="Enter your grade/percentage"
-                  />
-                  <div className="row w-100">
-                    <div className="col-md-6">
-                      <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                        Start Date
-                      </label>
-                      <br />
-                      <input
-                        type="date"
-                        name="startDate"
-                        value={edu.startDate ? new Date(edu.startDate).toISOString().split("T")[0] : ""}
-                        onChange={(e) => handleEducationChange(e, index)}
-                        style={{
-                          borderRadius: "5px",
-                          border: "1px solid var(--cyan)",
-                          padding: "5px",
-                          width: "100%",
-                        }}
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                        End Date
-                      </label>
-                      <br />
-                      <input
-                        type="date"
-                        name="endDate"
-                        value={edu.endDate ? new Date(edu.endDate).toISOString().split("T")[0] : ""}
-                        onChange={(e) => handleEducationChange(e, index)}
-                        style={{
-                          borderRadius: "5px",
-                          border: "1px solid var(--cyan)",
-                          padding: "5px",
-                          width: "100%",
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                    Description
-                  </label>
-                  <br />
-                  <input
-                    type="text"
-                    name="description"
-                    value={edu.description}
-                    onChange={(e) => handleEducationChange(e, index)}
-                    style={{
-                      borderRadius: "5px",
-                      border: "1px solid var(--cyan)",
-                      padding: "5px",
-                      width: "100%",
-                    }}
-                    placeholder="Enter your exp or achievements"
-                  />
-                </div>
-              ))}
-              <div className="row my-2 d-flex justify-content-center">
-                <button
-                  className="btn btn-primary w-50"
-                  onClick={() => {
-                    setForm((prevState) => ({
-                      ...prevState,
-                      education: [
-                        ...prevState.education,
-                        {
-                          id: uuidv4(),
-                          institution: "",
-                          degree: "",
-                          startDate: "",
-                          endDate: "",
-                          score: "",
-                          description: "",
-                        },
-                      ],
-                    }));
-                  }}
-                >
-                  Add Education
-                </button>
-              </div>
-              <div className="row m-auto d-flex justify-content-center mt-3">
-                <button className="btn btn-warning" onClick={handleSaveEducation} disabled={saveLoading}>
-                  {saveLoading ? <Spinner animation="border" variant="primary" /> : "Save"}
-                </button>
-                <button onClick={handleNext} className="mt-2 btn btn-primary">
-                  Next
-                </button>
-              </div>
+              <EducationTab
+                form={form}
+                handleEducationChange={handleEducationChange}
+                setForm={setForm}
+                saveLoading={saveLoading}
+                handleSaveEducation={handleSaveEducation}
+              />
             </Tab>
             <Tab eventKey="longer-tab" title="Additional">
-              <div>
-                <label style={{ color: "var(--cyan)", marginTop: "20px" }}>Bio (Max 500 Character)</label>
-                <br />
-                <textarea
-                  name="bio"
-                  value={form.bio}
-                  onChange={handleInputChange}
-                  style={{
-                    borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
-                    padding: "5px",
-                    width: "100%",
-                    marginBottom: "10px",
-                  }}
-                  placeholder="Enter your bio"
-                ></textarea>
-              </div>
-              <div className="">
-                <label style={{ color: "var(--cyan)" }}>Projects</label>
-
-                {form.projects.map((project, index) => (
-                  <div className="border border-dark rounded-1 p-3 m-1" key={project.id}>
-                    <span className="w-100 d-flex justify-content-end">
-                      <button
-                        className="w-25"
-                        onClick={() => {
-                          setForm((prevState) => ({
-                            ...prevState,
-                            projects: prevState.projects.filter((item) => item.id !== project.id),
-                          }));
-                        }}
-                      >
-                        cross
-                      </button>
-                    </span>
-                    <label style={{ color: "var(--cyan)" }}>Title</label>
-                    <br />
-                    <input
-                      type="text"
-                      name="title"
-                      value={project.title}
-                      onChange={(e) => handleAdditionalChange(e, index)}
-                      style={{
-                        borderRadius: "5px",
-                        border: "1px solid var(--cyan)",
-                        padding: "5px",
-                        width: "100%",
-                      }}
-                      placeholder="Enter your project title"
-                    />
-                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                      Tech Stack
-                    </label>
-                    <br />
-                    <Form.Select
-                      aria-label="Default select example"
-                      value={techStack[index]}
-                      onChange={(e) => {
-                        setTechStack((prevState) => prevState.map((item, i) => (i === index ? e.target.value : item)));
-                      }}
-                    >
-                      <option>Select some Tech Stack</option>
-                      {skills.map((skill, index) => (
-                        <option key={index} value={skill}>
-                          {skill}
-                        </option>
-                      ))}
-                    </Form.Select>
-                    {techStack[index].length > 0 && (
-                      <div>
-                        {form.projects[index].techStack.map((skill, i) => (
-                          <Badge
-                            key={i}
-                            bg="secondary"
-                            className="ms-2 mt-2"
-                            style={{ cursor: "pointer" }}
-                            onClick={(e) => {
-                              setForm((prevState) => ({
-                                ...prevState,
-                                projects: prevState.projects.map((item, i) =>
-                                  i === index
-                                    ? { ...item, techStack: item.techStack.filter((item) => item !== skill) }
-                                    : item
-                                ),
-                              }));
-                            }}
-                          >
-                            <div className="span d-flex p-1 fs-7 ">{skill} &#10005;</div>
-                          </Badge>
-                        ))}
-                      </div>
-                    )}
-                    <button
-                      className="btn btn-primary mt-3 ms-1"
-                      name="tech_stack"
-                      onClick={(e) => {
-                        if (techStack[index] === "Select some Tech Stack") {
-                          toast.error("Select a tech stack to add");
-                          return;
-                        }
-                        if (form.projects[index].techStack.includes(techStack[index])) {
-                          toast.error("Tech Stack already added");
-                          return;
-                        }
-                        setForm((prevState) => ({
-                          ...prevState,
-                          projects: prevState.projects.map((item, i) =>
-                            i === index ? { ...item, techStack: [...item.techStack, techStack[index]] } : item
-                          ),
-                        }));
-                      }}
-                    >
-                      Add Tech Stack
-                    </button>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                          Start Date
-                        </label>
-                        <br />
-                        <input
-                          type="date"
-                          name="startDate"
-                          value={project.startDate ? new Date(project.startDate).toISOString().split("T")[0] : ""}
-                          onChange={(e) => handleAdditionalChange(e, index)}
-                          style={{
-                            borderRadius: "5px",
-                            border: "1px solid var(--cyan)",
-                            padding: "5px",
-                            width: "100%",
-                          }}
-                        />
-                      </div>
-                      <div className="col-md-6">
-                        <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                          End Date
-                        </label>
-                        <br />
-                        <input
-                          type="date"
-                          name="endDate"
-                          value={project.endDate ? new Date(project.endDate).toISOString().split("T")[0] : ""}
-                          onChange={(e) => handleAdditionalChange(e, index)}
-                          style={{
-                            borderRadius: "5px",
-                            border: "1px solid var(--cyan)",
-                            padding: "5px",
-                            width: "100%",
-                          }}
-                        />
-                      </div>
-                    </div>
-                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                      Project Link
-                    </label>
-                    <br />
-                    <input
-                      type="text"
-                      name="projectLink"
-                      value={project.projectLink}
-                      onChange={(e) => handleAdditionalChange(e, index)}
-                      style={{
-                        borderRadius: "5px",
-                        border: "1px solid var(--cyan)",
-                        padding: "5px",
-                        width: "100%",
-                      }}
-                      placeholder="Enter your project link"
-                    />
-
-                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
-                      Description
-                    </label>
-                    <br />
-                    <input
-                      type="text"
-                      name="description"
-                      value={project.description}
-                      onChange={(e) => handleAdditionalChange(e, index)}
-                      style={{
-                        borderRadius: "5px",
-                        border: "1px solid var(--cyan)",
-                        padding: "5px",
-                        width: "100%",
-                      }}
-                      placeholder="Enter your project description"
-                    />
-                  </div>
-                ))}
-
-                <div className="row my-2 d-flex justify-content-center">
-                  <button
-                    className="btn btn-primary w-50"
-                    onClick={() => {
-                      setTechStack((prevState) => {
-                        return [...prevState, "Select some Tech Stack"];
-                      });
-                      setForm((prevState) => ({
-                        ...prevState,
-                        projects: [
-                          ...prevState.projects,
-                          {
-                            id: uuidv4(),
-                            title: "",
-                            techStack: [],
-                            startDate: "",
-                            endDate: "",
-                            projectLink: "",
-                            description: "",
-                          },
-                        ],
-                      }));
-                    }}
-                  >
-                    Add Project
-                  </button>
-                </div>
-              </div>
-              <div className="row m-auto d-flex justify-content-center mt-3">
-                <button className="btn btn-warning" onClick={handleSaveAdditional} disabled={saveLoading}>
-                  {saveLoading ? <Spinner animation="border" variant="primary" /> : "Save"}
-                </button>
-                <button onClick={handleNext} className="mt-2 btn btn-primary">
-                  Next
-                </button>
-              </div>
+              <AdditionalTab
+                form={form}
+                handleAdditionalChange={handleAdditionalChange}
+                setForm={setForm}
+                saveLoading={saveLoading}
+                handleSaveAdditional={handleSaveAdditional}
+                setTechStack={setTechStack}
+                techStack={techStack}
+                skills={skills}
+                handleNext={handleNext}
+              />
             </Tab>
             <Tab eventKey="Preview" title="Confirm Details">
-              <div>
-                <h3 style={{ color: "var(--cyan)", marginBottom: "20px" }} className="link w-100 text-center">
-                  Preview of the Form
-                </h3>
-                <div className="previewForm" style={{ fontFamily: "var(--secfont)", color: "var(--grey)", marginBottom: "20px" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link m-sm-0"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Name:</span>
-                    <span style={{ flex: 2 }}>{form.name || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Email ID:</span>
-                    <span style={{ flex: 2 }}>{form.email || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Username:</span>
-                    <span style={{ flex: 2 }}>{form.username || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Portfolio Link:</span>
-                    <span style={{ flex: 2 }}>{form.portfolioLink || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Github Link:</span>
-                    <span style={{ flex: 2 }}>{form.githubLink || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      flexWrap: "wrap",
-                      marginBottom: "10px",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Linkedin Link:</span>
-                    <span
-                      style={{
-                        width: "70vw",
-                        alignItems: "center",
-                        flex: 2,
-                        overflow: "hidden",
-                        whiteSpace: "nowrap",
-                        textOverflow: "ellipsis",
-                        marginBottom: "1.5rem",
-                      }}
-                    >
-                      {form.linkedinLink || "Yet to be filled"}
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Skills Proficient At:</span>
-                    <span style={{ flex: 2 }}>{form.skillsProficientAt.join(", ") || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Skills To Learn:</span>
-                    <span style={{ flex: 2 }}>{form.skillsToLearn.join(", ") || "Yet to be filled"}</span>
-                  </div>
-
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "var(--cyan)" }}>Bio:</span>
-                    <span style={{ flex: 2 }}>{form.bio || "Yet to be filled"}</span>
-                  </div>
-                </div>
-                <div className="row">
-                  <button
-                    onClick={handleSubmit}
-                    style={{
-                      backgroundColor: "var(--cyan)",
-                      color: "white",
-                      padding: "10px 20px",
-                      border: "none",
-                      borderRadius: "5px",
-                      cursor: "pointer",
-                    }}
-                    className="w-50 d-flex m-auto text-center align-content-center justify-content-center"
-                  >
-                    {saveLoading ? <Spinner animation="border" variant="primary" /> : "Submit"}
-                  </button>
-                </div>
-              </div>
+              <PreviewTab
+                form={form}
+                saveLoading={saveLoading}
+                handleSubmit={handleSubmit}
+              />
             </Tab>
           </Tabs>
         </div>
