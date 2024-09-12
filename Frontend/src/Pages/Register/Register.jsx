@@ -466,6 +466,7 @@ const Register = () => {
                 setForm={setForm}
                 saveLoading={saveLoading}
                 handleSaveEducation={handleSaveEducation}
+                handleNext={handleNext}
               />
             </Tab>
             <Tab eventKey="longer-tab" title="Additional">

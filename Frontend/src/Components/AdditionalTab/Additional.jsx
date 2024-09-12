@@ -230,16 +230,16 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
         </button>
       </div>
 
-      <div className="mt-3">
+      <div className="row m-auto d-flex justify-content-center mt-3">
         <button
-          className="button button-warning w-100"
+          className="btn button button-warning"
           onClick={handleSaveAdditional}
           disabled={saveLoading}
         >
           {saveLoading ? <Spinner animation="border" variant="primary" /> : "Save"}
         </button>
         <button
-          className="button button-primary w-100 mt-2"
+          className="btn button button-primary mt-2"
           onClick={handleNext}
         >
           Next
