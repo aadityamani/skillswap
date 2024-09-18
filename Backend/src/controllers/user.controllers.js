@@ -692,13 +692,28 @@ async function authenticate(token) {
 export const searchUserByName = asyncHandler(async (req, res) => {
   console.log("******** Inside searchUser Function *******");
 
-  const { name } = req.query;
-  if (!name) {
-    throw new ApiError(400, "Please provide search term");
+  const { name, skills } = req.query;
+  if (!name && !skills) {
+    throw new ApiError(400, "Please provide search parameters");
   }
 
-  //exclude the present logged in user's name
-  const users = await User.find({ name: { $regex: `${name}`, $options: "i", $ne: req.user.name } });
+  let users;
+  if(!!name && !!skills) {
+    users = await User.find({
+      _id: { $ne: req.user._id },  // Excludes the current user
+      $and: [
+        { name: { $regex: `${name}`, $options: "i" } },  // Matches name (case-insensitive)
+        { skillsProficientAt: { $in: skills.split(",") } }  // Matches skills
+      ]
+    });
+
+  }
+  else if(!!name) {
+      users = await User.find({ name: { $regex: `${name}`, $options: "i", $ne: req.user.name } });
+  }
+  else if(!!skills) {
+      users = await User.find({ name: { $ne: req.user.name }, skillsProficientAt: { $in: skills.split(",") } });
+  }
 
   if (!users) {
     throw new ApiError(500, "Error in fetching users");
