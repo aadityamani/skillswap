@@ -15,6 +15,7 @@ import {
   discoverUsers,
   sendScheduleMeet,
   scheduleMeet,
+  searchUserByName
 } from "../controllers/user.controllers.js";
 import { upload } from "../middlewares/multer.middleware.js";
 
@@ -46,5 +47,8 @@ router.route("/discover").get(verifyJWT_username, discoverUsers);
 // send schedule meet email
 router.route("/sendScheduleMeet").post(verifyJWT_username, sendScheduleMeet);
 router.route("/scheduleMeet").get(scheduleMeet);
+
+// search user by name
+router.route("/searchUser").get(verifyJWT_username, searchUserByName);
 
 export default router;
