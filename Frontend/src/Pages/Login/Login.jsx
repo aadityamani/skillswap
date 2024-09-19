@@ -17,13 +17,13 @@ const Login = () => {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "var(--grey)",
+    backgroundColor: "var(--black)",
   };
 
   const loginBoxStyle = {
     height: "200px",
     display: "flex",
-    backgroundColor: "var(--grey)",
+    backgroundColor: "var(--white)",
     flexDirection: "column",
     justifyContent: "space-between",
     padding: "20px",

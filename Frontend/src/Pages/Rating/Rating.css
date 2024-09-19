@@ -9,14 +9,14 @@
   padding: 20px;
   min-width: 100vw;
   min-height: 90vh;
-  background-color: var(--grey);
+  background-color: var(--white);
 }
 
 .inner-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--dark-cyan)46;
+  background-color: var(--black)46;
   padding: 4rem;
   border-radius: 1rem;
   min-width: 60vw;
@@ -47,7 +47,7 @@
 .submit-button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: var(--cyan);
+  background-color: var(--black);
   color: white;
   border: none;
   border-radius: 5px;
@@ -55,7 +55,7 @@
 }
 
 .submit-button:hover {
-  background-color: var(--dark-cyan);
+  background-color: var(--black);
 }
 
 @media (max-width: 768px) {

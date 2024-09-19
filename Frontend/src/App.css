@@ -1,17 +1,13 @@
 .light {
-	--white: #ffffff;
-	--cyan: #3bb4a1;
+	--white: #e1e2e4;
 	--light-grey: #6d6e70;
-	--grey: #2d2d2d;
 	--yellow: #fbf1a4;
-	--dark-cyan: #013e38;
 	--red: #f56664;
+	--black: #0a0b10;
 	--basefont: "Oswald", sans-serif;
 	--secfont: "Montserrat", sans-serif;
 
 	--dark-teal: #00211e;
-	--forest-teal: #087464;
-	--teal: #028477;
 	--yellowish-white: #f2efdb;
 	--bluish-white: #b3c2cd;
 	--grass-green: #809c5c;

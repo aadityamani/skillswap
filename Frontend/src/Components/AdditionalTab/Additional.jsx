@@ -8,7 +8,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
   return (
     <div>
       <div>
-        <label style={{ color: "var(--cyan)", marginTop: "20px" }}>Bio (Max 500 Character)</label>
+        <label style={{ color: "var(--black)", marginTop: "20px" }}>Bio (Max 500 Character)</label>
         <br />
         <textarea
           name="bio"
@@ -16,7 +16,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
           onChange={(e) => handleAdditionalChange(e, 0)}
           style={{
             borderRadius: "5px",
-            border: "1px solid var(--cyan)",
+            border: "1px solid var(--black)",
             padding: "5px",
             width: "100%",
             marginBottom: "10px",
@@ -26,12 +26,12 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
       </div>
 
       <div>
-        <label style={{ color: "var(--cyan)" }}>Projects</label>
+        <label style={{ color: "var(--black)" }}>Projects</label>
 
         {form.projects.map((project, index) => (
           <div className="border border-dark rounded-1 p-3 m-1" key={project.id}>
             <div className="form-group">
-              <label style={{ color: "var(--cyan)" }}>Title</label>
+              <label style={{ color: "var(--black)" }}>Title</label>
               <br />
               <input
                 type="text"
@@ -40,7 +40,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
                 onChange={(e) => handleAdditionalChange(e, index)}
                 style={{
                   borderRadius: "5px",
-                  border: "1px solid var(--cyan)",
+                  border: "1px solid var(--black)",
                   padding: "5px",
                   width: "100%",
                 }}
@@ -49,7 +49,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
             </div>
 
             <div className="form-group">
-              <label className="mt-2" style={{ color: "var(--cyan)" }}>
+              <label className="mt-2" style={{ color: "var(--black)" }}>
                 Tech Stack
               </label>
               <br />
@@ -119,7 +119,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
 
             <div className="row">
               <div className="col-md-6">
-                <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                <label className="mt-2" style={{ color: "var(--black)" }}>
                   Start Date
                 </label>
                 <br />
@@ -130,7 +130,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
                   onChange={(e) => handleAdditionalChange(e, index)}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -138,7 +138,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
               </div>
 
               <div className="col-md-6">
-                <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                <label className="mt-2" style={{ color: "var(--black)" }}>
                   End Date
                 </label>
                 <br />
@@ -149,7 +149,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
                   onChange={(e) => handleAdditionalChange(e, index)}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -158,7 +158,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
             </div>
 
             <div className="form-group">
-              <label className="mt-2" style={{ color: "var(--cyan)" }}>
+              <label className="mt-2" style={{ color: "var(--black)" }}>
                 Project Link
               </label>
               <br />
@@ -169,7 +169,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
                 onChange={(e) => handleAdditionalChange(e, index)}
                 style={{
                   borderRadius: "5px",
-                  border: "1px solid var(--cyan)",
+                  border: "1px solid var(--black)",
                   padding: "5px",
                   width: "100%",
                 }}
@@ -178,7 +178,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
             </div>
 
             <div className="form-group">
-              <label className="mt-2" style={{ color: "var(--cyan)" }}>
+              <label className="mt-2" style={{ color: "var(--black)" }}>
                 Description
               </label>
               <br />
@@ -189,7 +189,7 @@ const AdditionalTab = ({ form, handleAdditionalChange, setForm, saveLoading, han
                 onChange={(e) => handleAdditionalChange(e, index)}
                 style={{
                   borderRadius: "5px",
-                  border: "1px solid var(--cyan)",
+                  border: "1px solid var(--black)",
                   padding: "5px",
                   width: "100%",
                 }}

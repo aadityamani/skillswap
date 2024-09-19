@@ -407,7 +407,7 @@ const EditProfile = () => {
 
   return (
     <div className="register_page ">
-      <h1 className="m-4" style={{ fontFamily: "var(--basefont)", color: "var(--cyan)" }}>
+      <h1 className="m-4" style={{ fontFamily: "var(--basefont)", color: "var(--black)" }}>
         Update Profile Details
       </h1>
       {loading ? (
@@ -426,7 +426,7 @@ const EditProfile = () => {
             <Tab eventKey="registration" title="Registration">
               {/* Name */}
               <div>
-                <label style={{ color: "var(--cyan)" }}>Name</label>
+                <label style={{ color: "var(--black)" }}>Name</label>
                 <br />
                 <input
                   type="text"
@@ -434,7 +434,7 @@ const EditProfile = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -443,13 +443,13 @@ const EditProfile = () => {
                 />
               </div>
               <div className="mt-3">
-                <label style={{ color: "var(--cyan)" }}>Profile Photo</label>
+                <label style={{ color: "var(--black)" }}>Profile Photo</label>
                 <br />
                 <input type="file" accept="image/*" onChange={handleFileChange} />
               </div>
               {/* Email */}
               <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
+                <label className="mt-3" style={{ color: "var(--black)" }}>
                   Email
                 </label>
                 <br />
@@ -459,7 +459,7 @@ const EditProfile = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -469,7 +469,7 @@ const EditProfile = () => {
               </div>
               {/* Username */}
               <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
+                <label className="mt-3" style={{ color: "var(--black)" }}>
                   Username
                 </label>
                 <br />
@@ -480,7 +480,7 @@ const EditProfile = () => {
                   value={form.username}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -489,7 +489,7 @@ const EditProfile = () => {
               </div>
               {/* Linkedin Profile Link*/}
               <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
+                <label className="mt-3" style={{ color: "var(--black)" }}>
                   Linkedin Link
                 </label>
                 <br />
@@ -500,7 +500,7 @@ const EditProfile = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -509,7 +509,7 @@ const EditProfile = () => {
               </div>
               {/* Github Profile Link*/}
               <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
+                <label className="mt-3" style={{ color: "var(--black)" }}>
                   Github Link
                 </label>
                 <br />
@@ -520,7 +520,7 @@ const EditProfile = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -529,7 +529,7 @@ const EditProfile = () => {
               </div>
               {/* Portfolio Link */}
               <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
+                <label className="mt-3" style={{ color: "var(--black)" }}>
                   Portfolio Link
                 </label>
                 <br />
@@ -540,7 +540,7 @@ const EditProfile = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                   }}
@@ -549,7 +549,7 @@ const EditProfile = () => {
               </div>
               {/* Skills Proficient At */}
               <div>
-                <label className="mt-3" style={{ color: "var(--cyan)" }}>
+                <label className="mt-3" style={{ color: "var(--black)" }}>
                   Skills Proficient At
                 </label>
                 <br />
@@ -586,7 +586,7 @@ const EditProfile = () => {
               </div>
               {/* Skills to learn */}
               <div>
-                <label style={{ color: "var(--cyan)", marginTop: "20px" }}>Skills To Learn</label>
+                <label style={{ color: "var(--black)", marginTop: "20px" }}>Skills To Learn</label>
                 <br />
                 <Form.Select
                   aria-label="Default select example"
@@ -638,7 +638,7 @@ const EditProfile = () => {
                       </button>
                     </span>
                   )}
-                  <label style={{ color: "var(--cyan)" }}>Institution Name</label>
+                  <label style={{ color: "var(--black)" }}>Institution Name</label>
                   <br />
                   <input
                     type="text"
@@ -647,13 +647,13 @@ const EditProfile = () => {
                     onChange={(e) => handleEducationChange(e, index)}
                     style={{
                       borderRadius: "5px",
-                      border: "1px solid var(--cyan)",
+                      border: "1px solid var(--black)",
                       padding: "5px",
                       width: "100%",
                     }}
                     placeholder="Enter your institution name"
                   />
-                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                  <label className="mt-2" style={{ color: "var(--black)" }}>
                     Degree
                   </label>
                   <br />
@@ -664,13 +664,13 @@ const EditProfile = () => {
                     onChange={(e) => handleEducationChange(e, index)}
                     style={{
                       borderRadius: "5px",
-                      border: "1px solid var(--cyan)",
+                      border: "1px solid var(--black)",
                       padding: "5px",
                       width: "100%",
                     }}
                     placeholder="Enter your degree"
                   />
-                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                  <label className="mt-2" style={{ color: "var(--black)" }}>
                     Grade/Percentage
                   </label>
                   <br />
@@ -681,7 +681,7 @@ const EditProfile = () => {
                     onChange={(e) => handleEducationChange(e, index)}
                     style={{
                       borderRadius: "5px",
-                      border: "1px solid var(--cyan)",
+                      border: "1px solid var(--black)",
                       padding: "5px",
                       width: "100%",
                     }}
@@ -689,7 +689,7 @@ const EditProfile = () => {
                   />
                   <div className="row w-100">
                     <div className="col-md-6">
-                      <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                      <label className="mt-2" style={{ color: "var(--black)" }}>
                         Start Date
                       </label>
                       <br />
@@ -700,14 +700,14 @@ const EditProfile = () => {
                         onChange={(e) => handleEducationChange(e, index)}
                         style={{
                           borderRadius: "5px",
-                          border: "1px solid var(--cyan)",
+                          border: "1px solid var(--black)",
                           padding: "5px",
                           width: "100%",
                         }}
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                      <label className="mt-2" style={{ color: "var(--black)" }}>
                         End Date
                       </label>
                       <br />
@@ -718,14 +718,14 @@ const EditProfile = () => {
                         onChange={(e) => handleEducationChange(e, index)}
                         style={{
                           borderRadius: "5px",
-                          border: "1px solid var(--cyan)",
+                          border: "1px solid var(--black)",
                           padding: "5px",
                           width: "100%",
                         }}
                       />
                     </div>
                   </div>
-                  <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                  <label className="mt-2" style={{ color: "var(--black)" }}>
                     Description
                   </label>
                   <br />
@@ -736,7 +736,7 @@ const EditProfile = () => {
                     onChange={(e) => handleEducationChange(e, index)}
                     style={{
                       borderRadius: "5px",
-                      border: "1px solid var(--cyan)",
+                      border: "1px solid var(--black)",
                       padding: "5px",
                       width: "100%",
                     }}
@@ -779,7 +779,7 @@ const EditProfile = () => {
             </Tab>
             <Tab eventKey="longer-tab" title="Additional">
               <div>
-                <label style={{ color: "var(--cyan)", marginTop: "20px" }}>Bio (Max 500 Character)</label>
+                <label style={{ color: "var(--black)", marginTop: "20px" }}>Bio (Max 500 Character)</label>
                 <br />
                 <textarea
                   name="bio"
@@ -787,7 +787,7 @@ const EditProfile = () => {
                   onChange={handleInputChange}
                   style={{
                     borderRadius: "5px",
-                    border: "1px solid var(--cyan)",
+                    border: "1px solid var(--black)",
                     padding: "5px",
                     width: "100%",
                     marginBottom: "10px",
@@ -796,7 +796,7 @@ const EditProfile = () => {
                 ></textarea>
               </div>
               <div className="">
-                <label style={{ color: "var(--cyan)" }}>Projects</label>
+                <label style={{ color: "var(--black)" }}>Projects</label>
 
                 {form?.projects?.map((project, index) => (
                   <div className="border border-dark rounded-1 p-3 m-1" key={project?._id}>
@@ -813,7 +813,7 @@ const EditProfile = () => {
                         cross
                       </button>
                     </span>
-                    <label style={{ color: "var(--cyan)" }}>Title</label>
+                    <label style={{ color: "var(--black)" }}>Title</label>
                     <br />
                     <input
                       type="text"
@@ -822,13 +822,13 @@ const EditProfile = () => {
                       onChange={(e) => handleAdditionalChange(e, index)}
                       style={{
                         borderRadius: "5px",
-                        border: "1px solid var(--cyan)",
+                        border: "1px solid var(--black)",
                         padding: "5px",
                         width: "100%",
                       }}
                       placeholder="Enter your project title"
                     />
-                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                    <label className="mt-2" style={{ color: "var(--black)" }}>
                       Tech Stack
                     </label>
                     <br />
@@ -894,7 +894,7 @@ const EditProfile = () => {
                     </button>
                     <div className="row">
                       <div className="col-md-6">
-                        <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                        <label className="mt-2" style={{ color: "var(--black)" }}>
                           Start Date
                         </label>
                         <br />
@@ -905,14 +905,14 @@ const EditProfile = () => {
                           onChange={(e) => handleAdditionalChange(e, index)}
                           style={{
                             borderRadius: "5px",
-                            border: "1px solid var(--cyan)",
+                            border: "1px solid var(--black)",
                             padding: "5px",
                             width: "100%",
                           }}
                         />
                       </div>
                       <div className="col-md-6">
-                        <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                        <label className="mt-2" style={{ color: "var(--black)" }}>
                           End Date
                         </label>
                         <br />
@@ -923,14 +923,14 @@ const EditProfile = () => {
                           onChange={(e) => handleAdditionalChange(e, index)}
                           style={{
                             borderRadius: "5px",
-                            border: "1px solid var(--cyan)",
+                            border: "1px solid var(--black)",
                             padding: "5px",
                             width: "100%",
                           }}
                         />
                       </div>
                     </div>
-                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                    <label className="mt-2" style={{ color: "var(--black)" }}>
                       Project Link
                     </label>
                     <br />
@@ -941,14 +941,14 @@ const EditProfile = () => {
                       onChange={(e) => handleAdditionalChange(e, index)}
                       style={{
                         borderRadius: "5px",
-                        border: "1px solid var(--cyan)",
+                        border: "1px solid var(--black)",
                         padding: "5px",
                         width: "100%",
                       }}
                       placeholder="Enter your project link"
                     />
 
-                    <label className="mt-2" style={{ color: "var(--cyan)" }}>
+                    <label className="mt-2" style={{ color: "var(--black)" }}>
                       Description
                     </label>
                     <br />
@@ -959,7 +959,7 @@ const EditProfile = () => {
                       onChange={(e) => handleAdditionalChange(e, index)}
                       style={{
                         borderRadius: "5px",
-                        border: "1px solid var(--cyan)",
+                        border: "1px solid var(--black)",
                         padding: "5px",
                         width: "100%",
                       }}
