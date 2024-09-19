@@ -156,7 +156,7 @@ const Header = () => {
                     <Nav.Link
                       as={Link}
                       to="/search"
-                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
+                      style={{ fontFamily: "var(--secfont)", color: "var(--white)" }}
                     >
                       Search
                     </Nav.Link>

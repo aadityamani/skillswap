@@ -33,7 +33,7 @@
 }
 
 .search-page {
-    background-color: var(--grey);
+    background-color: var(--black);
     min-height: 100vh;
     color: white;
 }
