@@ -153,6 +153,13 @@ const Header = () => {
                     >
                       Discover
                     </Nav.Link>
+                    <Nav.Link
+                      as={Link}
+                      to="/search"
+                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
+                    >
+                      Search
+                    </Nav.Link>
                     <Nav.Link as={Link} to="/chats" style={{ fontFamily: "var(--secfont)", color: "var(--white)" }}>
                       Your Chats
                     </Nav.Link>

@@ -13,7 +13,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ProfileCard from "./ProfileCard";
 import "./Discover.css";
-import Search from "./Search";
 import Spinner from "react-bootstrap/Spinner";
 
 const Discover = () => {
@@ -105,9 +104,6 @@ const Discover = () => {
               </div>
             ) : (
               <>
-                {/* <div>
-                  <Search />
-                </div> */}
                 <h1
                   id="for-you"
                   style={{

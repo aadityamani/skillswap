@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Discover from "./Pages/Discover/Discover";
+import Search from "./Pages/Search/Search";
 import Login from "./Pages/Login/Login";
 import Header from "./Components/Navbar/Navbar";
 import LandingPage from "./Pages/LandingPage/LandingPage";
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/discover" element={<Discover />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about_us" element={<AboutUs />} />
         <Route path="/edit_profile" element={<EditProfile />} />
