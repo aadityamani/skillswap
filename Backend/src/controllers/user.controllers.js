@@ -651,7 +651,7 @@ export const scheduleMeet = asyncHandler(async (req, res) => {
   console.log("******** Inside scheduleMeet Function *******");
 
   const meeting = await Meeting.findById(req.query.id);
-  
+
   const fromUser = await User.findById(meeting.fromId);
   const oAuth2ClientUser = await authenticate(fromUser.token);
   const calendarUser = google.calendar({ version: "v3", auth: oAuth2ClientUser });
@@ -677,7 +677,7 @@ async function authenticate(token) {
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
   const callbackURL = "/auth/google/callback";
   const oAuth2Client = new OAuth2Client(clientID, clientSecret, callbackURL);
-  
+
   try {
     oAuth2Client.setCredentials(token);
   } catch (error) {
@@ -688,3 +688,37 @@ async function authenticate(token) {
   }
   return oAuth2Client;
 }
+
+export const searchUserByName = asyncHandler(async (req, res) => {
+  console.log("******** Inside searchUser Function *******");
+
+  const { name, skills } = req.query;
+  if (!name && !skills) {
+    throw new ApiError(400, "Please provide search parameters");
+  }
+
+  let users;
+  if(!!name && !!skills) {
+    users = await User.find({
+      _id: { $ne: req.user._id },  // Excludes the current user
+      $and: [
+        { name: { $regex: `${name}`, $options: "i" } },  // Matches name (case-insensitive)
+        { skillsProficientAt: { $in: skills.split(",") } }  // Matches skills
+      ]
+    });
+
+  }
+  else if(!!name) {
+      users = await User.find({ name: { $regex: `${name}`, $options: "i", $ne: req.user.name } });
+  }
+  else if(!!skills) {
+      users = await User.find({ name: { $ne: req.user.name }, skillsProficientAt: { $in: skills.split(",") } });
+  }
+
+  if (!users) {
+    throw new ApiError(500, "Error in fetching users");
+  }
+
+  return res.status(200).json(new ApiResponse(200, users, "Users fetched successfully"));
+});
+

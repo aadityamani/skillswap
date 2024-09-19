@@ -12,3 +12,6 @@ Additions:
 2. Gmeet for meeting scheduling in email.
 3. Threshold for no of reports leading to suspension: 5
 4. Review of Suspended Accounts.
+
+TODO:
+1. Can't go to own profile if viewing another user's profile.

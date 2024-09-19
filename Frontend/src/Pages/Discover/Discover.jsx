@@ -13,7 +13,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ProfileCard from "./ProfileCard";
 import "./Discover.css";
-import Search from "./Search";
 import Spinner from "react-bootstrap/Spinner";
 
 const Discover = () => {
@@ -105,14 +104,11 @@ const Discover = () => {
               </div>
             ) : (
               <>
-                {/* <div>
-                  <Search />
-                </div> */}
                 <h1
                   id="for-you"
                   style={{
                     fontFamily: "Josefin Sans, sans-serif",
-                    color: "var(--yellow)",
+                    color: "var(--white)",
                     marginTop: "2rem",
                     marginBottom: "1rem",
                   }}
@@ -133,14 +129,14 @@ const Discover = () => {
                       />
                     ))
                   ) : (
-                    <h1 style={{ color: "var(--yellow)" }}>No users to show</h1>
+                    <h1 style={{ color: "var(--white)" }}>No users to show</h1>
                   )}
                 </div>
                 <h1
                   id="popular"
                   style={{
                     fontFamily: "Josefin Sans, sans-serif",
-                    color: "var(--yellow)",
+                    color: "var(--white)",
                     marginTop: "1rem",
                     marginBottom: "3rem",
                   }}
@@ -163,7 +159,7 @@ const Discover = () => {
                       />
                     ))
                   ) : (
-                    <h1 style={{ color: "var(--yellow)" }}>No users to show</h1>
+                    <h1 style={{ color: "var(--white)" }}>No users to show</h1>
                   )}
                   {/* Add more ProfileCard components as needed */}
                 </div>
@@ -182,7 +178,7 @@ const Discover = () => {
                       />
                     ))
                   ) : (
-                    <h1 style={{ color: "var(--yellow)" }}>No users to show</h1>
+                    <h1 style={{ color: "var(--white)" }}>No users to show</h1>
                   )}
                 </div>
                 <h2 id="others">Others</h2>
@@ -201,7 +197,7 @@ const Discover = () => {
                       />
                     ))
                   ) : (
-                    <h1 style={{ color: "var(--yellow)" }}>No users to show</h1>
+                    <h1 style={{ color: "var(--white)" }}>No users to show</h1>
                   )}
                 </div>
                 {/* Add more ProfileCard components as needed */}

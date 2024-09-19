@@ -426,7 +426,7 @@ const Register = () => {
 
   return (
     <div className="register_page ">
-      <h1 className="m-4" style={{ fontFamily: "var(--basefont)", color: "var(--cyan)" }}>
+      <h1 className="m-4" style={{ fontFamily: "var(--basefont)", color: "var(--white)" }}>
         Registration Form
       </h1>
       {loading ? (
@@ -466,6 +466,7 @@ const Register = () => {
                 setForm={setForm}
                 saveLoading={saveLoading}
                 handleSaveEducation={handleSaveEducation}
+                handleNext={handleNext}
               />
             </Tab>
             <Tab eventKey="longer-tab" title="Additional">

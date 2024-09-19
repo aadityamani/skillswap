@@ -16,7 +16,7 @@ p {
   line-height: 21px;
 }
 
-.card-container {
+.search-card-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,11 +32,12 @@ p {
   height: 450px;
   max-width: 100%;
   text-align: center;
-  margin: 3rem;
+  margin: 1rem;
+  padding-top: 0.5rem;
   overflow: hidden;
 }
 
-.card-container img {
+.search-card-container img {
   border: 1px solid var(--yellow);
   border-radius: 50%;
   padding: 7px;
@@ -52,8 +53,8 @@ p {
 
 button.primary {
   margin: 1rem;
-  background-color: var(--black);
-  border: 1px solid var(--black);
+  background-color: var(--cyan);
+  border: 1px solid var(--cyan);
   border-radius: 3px;
   color: var(--white);
   font-family: var(--secfont);
@@ -64,21 +65,21 @@ button.primary {
 
 button.primary.ghost {
   margin: 1rem;
-  color: var(--white) !important;
+  background-color: transparent;
+  color: var(--cyan);
   transition: 0.3s ease-in-out;
-  background-color: var(--grass-green) !important;
 }
 
 button.primary:hover {
   background-color: var(--white);
-  color: var(--black);
+  color: var(--cyan);
 }
 
 button.primary.ghost:hover {
   background-color: #ffffff27;
 }
 
-.profskills {
+.search-profskills {
   background-color: rgba(48, 88, 100, 0.284);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -91,21 +92,23 @@ button.primary.ghost:hover {
   overflow-y: auto;
 }
 
-.profskill-boxes {
-  margin: 1rem;
+.search-profskill-boxes {
   display: flex;
   flex-wrap: wrap;
 }
 
-.profskill-box {
+.search-profskill-box {
   text-align: center;
   background-color: var(--grass-green);
   color: white;
   padding: 0.5rem;
   margin-right: 1rem;
-  margin-top: 1rem;
   border-radius: 5px;
   min-width: 4rem;
+}
+
+.search-skills-heading {
+  margin: 10px 0;
 }
 
 @media (max-width: 768px) {

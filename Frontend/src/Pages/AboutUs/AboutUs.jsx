@@ -5,7 +5,7 @@ const containerStyle = {
   display: "flex",
   flexDirection: "row",
   alignItems: "start",
-  backgroundColor: "var(--grey)",
+  backgroundColor: "var(--white)",
   justifyContent: "center",
 };
 

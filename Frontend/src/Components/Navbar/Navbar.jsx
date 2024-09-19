@@ -122,9 +122,9 @@ const Header = () => {
 
   return (
     <>
-      <Navbar key="md" expand="md" className="bg-body-primary" style={{ backgroundColor: "var(--cyan)", zIndex: 998 }}>
+      <Navbar key="md" expand="md" className="bg-body-primary" style={{ backgroundColor: "var(--black)", borderBottom: "1px solid white", zIndex: 998 }}>
         <Container fluid>
-          <Navbar.Brand href="/" style={{ fontFamily: "Josefin Sans, sans-serif", color: "var(--grey)", fontWeight: 500 }}>
+          <Navbar.Brand href="/" style={{ fontFamily: "Josefin Sans, sans-serif", color: "var(--white)", fontWeight: 500 }}>
             SKILL SWAP
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
@@ -136,26 +136,31 @@ const Header = () => {
             <Offcanvas.Header closeButton>
               <Offcanvas.Title
                 id={`offcanvasNavbarLabel-expand-md`}
-                style={{ fontFamily: "Josefin Sans, sans-serif", color: "var(--teal)" }}
+                style={{ fontFamily: "Josefin Sans, sans-serif", color: "var(--white)" }}
               >
                 SKILL SWAP
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/" style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
-                  Home
-                </Nav.Link>
+                
                 {navUser !== null ? (
                   <>
                     <Nav.Link
                       as={Link}
                       to="/discover"
-                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
+                      style={{ fontFamily: "var(--secfont)", color: "var(--white)" }}
                     >
                       Discover
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/chats" style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
+                    <Nav.Link
+                      as={Link}
+                      to="/search"
+                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
+                    >
+                      Search
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/chats" style={{ fontFamily: "var(--secfont)", color: "var(--white)" }}>
                       Your Chats
                     </Nav.Link>
                     {discover && (
@@ -174,55 +179,51 @@ const Header = () => {
                         </Nav.Link>
                         <Nav.Link
                           href="#popular"
-                          style={{ fontFamily: "var(--secfont)", color: "var(--cyan)", fontSize: "1.2rem" }}
+                          style={{ fontFamily: "var(--secfont)", color: "var(--black)", fontSize: "1.2rem" }}
                           className="d-md-none"
                         >
                           Popular
                         </Nav.Link>
                         <Nav.Link
                           href="#web-development"
-                          style={{ fontFamily: "var(--secfont)", color: "var(--dark-cyan)", marginLeft: "1.5rem" }}
+                          style={{ fontFamily: "var(--secfont)", color: "var(--black)", marginLeft: "1.5rem" }}
                           className="d-md-none"
                         >
                           Web Development
                         </Nav.Link>
                         <Nav.Link
                           href="#machine-learning"
-                          style={{ fontFamily: "var(--secfont)", color: "var(--dark-cyan)", marginLeft: "1.5rem" }}
+                          style={{ fontFamily: "var(--secfont)", color: "var(--black)", marginLeft: "1.5rem" }}
                           className="d-md-none"
                         >
                           Machine Learning
                         </Nav.Link>
                         <Nav.Link
                           href="#others"
-                          style={{ fontFamily: "var(--secfont)", color: "var(--dark-cyan)", marginLeft: "1.5rem" }}
+                          style={{ fontFamily: "var(--secfont)", color: "var(--black)", marginLeft: "1.5rem" }}
                           className="d-md-none"
                         >
                           Others
                         </Nav.Link>
                       </>
                     )}
-                    <Nav.Link as={Dropdown} style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
+                    <Nav.Link as={Dropdown} style={{ fontFamily: "var(--secfont)", color: "var(--white)" }}>
                       <UserProfileDropdown />
                     </Nav.Link>
                   </>
                 ) : (
                   <>
+                    <Nav.Link as={Link} to="/" style={{ fontFamily: "var(--secfont)", color: "var(--white)" }}>
+                      Home
+                    </Nav.Link>
                     <Nav.Link
                       as={Link}
                       to="/about_us"
-                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
+                      style={{ fontFamily: "var(--secfont)", color: "var(--white)" }}
                     >
                       About Us
                     </Nav.Link>
-                    <Nav.Link
-                      as={Link}
-                      to="/#why-skill-swap"
-                      style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}
-                    >
-                      Why SkillSwap
-                    </Nav.Link>
-                    <Nav.Link as={Link} to="/login" style={{ fontFamily: "var(--secfont)", color: "var(--grey)" }}>
+                    <Nav.Link as={Link} to="/login" style={{ fontFamily: "var(--secfont)", color: "var(--white)" }}>
                       Login/Register
                     </Nav.Link>
                   </>

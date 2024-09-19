@@ -1,6 +1,6 @@
 .register_page {
   min-height: 80vh;
-  background-color: var(--dark-cyan);
+  background-color: var(--black);
   font-family: var(--secfont);
   color: white;
   display: flex;
@@ -11,7 +11,7 @@
 
 .register_section {
   background-color: var(--white-1);
-  color: var(--grey);
+  color: var(--white);
   min-height: 80vh;
   width: 50%;
   border: 1px solid black;
@@ -41,7 +41,7 @@
 
 .previewContainer {
   font-family: var(--secfont);
-  color: var(--grey);
+  color: var(--white);
   margin-bottom: 20px;
 }
 
@@ -55,7 +55,7 @@
 .previewLabel {
   flex: 1;
   font-weight: bold;
-  color: var(--cyan);
+  color: var(--black);
 }
 
 .previewValue {
@@ -64,12 +64,12 @@
 }
 
 .label {
-  color: var(--cyan) !important;
+  color: var(--black) !important;
 }
 
 .input-field {
   border-radius: 5px;
-  border: 1px solid var(--cyan);
+  border: 1px solid var(--black);
   padding: 5px;
   width: 100%;
 }
@@ -87,7 +87,7 @@
 }
 
 .button {
-  background-color: var(--cyan) !important;
+  background-color: var(--black) !important;
   color: white !important;
   padding: 10px 20px;
   border: none;
@@ -96,7 +96,7 @@
 }
 
 .button-primary {
-  background-color: var(--cyan) !important;
+  background-color: var(--black) !important;
   color: white !important;
 }
 
@@ -124,12 +124,12 @@
 }
 
 .link {
-  color: var(--cyan);
+  color: var(--black);
 }
 
 .previewForm {
   font-family: var(--secfont);
-  color: var(--grey);
+  color: var(--white);
   margin-bottom: 20px;
 }
 

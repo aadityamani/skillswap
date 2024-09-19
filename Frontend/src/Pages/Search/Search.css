@@ -1,0 +1,90 @@
+.search-bar {
+    transform: translateY(-50%);
+    width: 50%;
+    left: 0 !important;
+    background-color: var(--white-1);
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+.search-bar.active {
+    width: 60%;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-icon {
+    color: var(--dark-silver);
+    transition: color 0.3s ease;
+}
+
+.search-bar:hover .search-icon {
+    color: #333;
+}
+
+.search-page {
+    background-color: var(--grey);
+    min-height: 100vh;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search-box-placeholder {
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--bluish-white);
+}
+
+.search-box-results {
+    width: 90%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-skill-container {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.search-skill-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-form-select {
+    border-radius: 20px !important;
+    padding: 10px 20px !important;
+    outline: none !important;
+    width: 100% !important;
+    background-color: var(--white-1) !important;
+}

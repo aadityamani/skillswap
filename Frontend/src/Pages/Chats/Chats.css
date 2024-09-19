@@ -1,27 +1,29 @@
 .container-overall {
-  background-color: var(--grey);
+  background-color: var(--black);
   min-height: 90vh;
   font-family: var(--secfont);
   color: white;
-  border-right: 1px solid var(--cyan);
+  border-right: 1px solid var(--black);
+  /* display: flex; */
 }
 
 .container-right {
   display: flex;
-  background-color: lightgrey;
+  background-color: var(--black);
 }
 
 .container-left {
   flex: 3;
-  background-color: var(--grey);
+  background-color: var(--black);
   min-height: 90vh;
+  border-right: 1px solid white;
 }
 
 .tabs {
   display: flex;
-  padding-top: 2rem;
+  padding-top: 15.5px;
   justify-content: space-around;
-  border-bottom: 1px solid var(--cyan);
+  border-bottom: 1px solid var(--white);
 }
 
 .chat-list {
@@ -43,8 +45,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--grey);
-  color: var(--cyan);
+  background-color: var(--white);
+  color: var(--black);
   padding: 50px;
   border-radius: 10px;
   margin: 5rem;
@@ -59,10 +61,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--grey);
-  color: var(--cyan);
+  background-color: var(--white);
+  color: var(--black);
   padding: 50px;
   border-radius: 10px;
+}
+
+h3 {
+  color: var(--white) !important;
 }
 
 @media (max-width: 780px) {

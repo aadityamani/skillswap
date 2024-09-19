@@ -8,12 +8,12 @@
 html,
 body {
   height: 100%;
-  background-color: var(--grey);
+  background-color: var(--white);
 }
 
 body {
   font-family: var(--basefont);
-  background-color: var(--grey);
+  background-color: var(--white);
   color: white;
   text-align: center;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--cyan);
+  background-color: var(--black);
   border-radius: 10px;
 }
 
