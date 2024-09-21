@@ -6,12 +6,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useUser } from "../../util/UserContext";
 import Spinner from "react-bootstrap/Spinner";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import io from "socket.io-client";
 import ScrollableFeed from "react-scrollable-feed";
-import RequestCard from "./RequestCard";
+import ProfileCard from "../../Components/ProfileCard/ProfileCard";
 import "./Chats.css";
-import Modal from "react-bootstrap/Modal";
 
 var socket;
 const Chats = () => {
@@ -382,7 +381,7 @@ const Chats = () => {
               <div className="modalContent">
                 <h2 style={{ textAlign: "center" }}>Confirm your choice?</h2>
                 {selectedRequest && (
-                  <RequestCard
+                  <ProfileCard
                     name={selectedRequest?.name}
                     skills={selectedRequest?.skillsProficientAt}
                     rating="4"

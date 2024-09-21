@@ -16,7 +16,7 @@ p {
   line-height: 21px;
 }
 
-.search-card-container {
+.card-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,7 +37,7 @@ p {
   overflow: hidden;
 }
 
-.search-card-container img {
+.card-container img {
   border: 1px solid var(--yellow);
   border-radius: 50%;
   padding: 7px;
@@ -65,9 +65,9 @@ button.primary {
 
 button.primary.ghost {
   margin: 1rem;
-  background-color: var(--grass-green) !important;
   color: var(--white) !important;
   transition: 0.3s ease-in-out;
+  background-color: var(--grass-green) !important;
 }
 
 button.primary:hover {
@@ -79,7 +79,7 @@ button.primary.ghost:hover {
   background-color: #ffffff27;
 }
 
-.search-profskills {
+.profskills {
   background-color: rgba(48, 88, 100, 0.284);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -92,12 +92,12 @@ button.primary.ghost:hover {
   overflow-y: auto;
 }
 
-.search-profskill-boxes {
+.profskill-boxes {
   display: flex;
   flex-wrap: wrap;
 }
 
-.search-profskill-box {
+.profskill-box {
   text-align: center;
   background-color: var(--grass-green);
   color: white;
@@ -107,7 +107,7 @@ button.primary.ghost:hover {
   min-width: 4rem;
 }
 
-.search-skills-heading {
+.skills-heading {
   margin: 10px 0;
 }
 

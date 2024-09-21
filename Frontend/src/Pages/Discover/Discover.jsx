@@ -4,14 +4,8 @@ import { useUser } from "../../util/UserContext";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { NavLink } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import ProfileCard from "./ProfileCard";
+import ProfileCard from "../../Components/ProfileCard/ProfileCard";
 import "./Discover.css";
 import Spinner from "react-bootstrap/Spinner";
 
