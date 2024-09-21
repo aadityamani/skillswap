@@ -103,6 +103,7 @@ button.primary.ghost:hover {
   color: white;
   padding: 0.5rem;
   margin-right: 1rem;
+  margin-bottom: 1rem;
   border-radius: 5px;
   min-width: 4rem;
 }
