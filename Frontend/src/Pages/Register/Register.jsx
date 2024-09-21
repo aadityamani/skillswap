@@ -4,11 +4,9 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Spinner from "react-bootstrap/Spinner";
-import Form from "react-bootstrap/Form";
-import { skills } from "./Skills";
+import { skills } from "../../util/Skills.js";
 import axios from "axios";
 import "./Register.css";
-import Badge from "react-bootstrap/Badge";
 import { v4 as uuidv4 } from "uuid";
 
 import ProfileTab from "../../Components/ProfileTab/Profile"
