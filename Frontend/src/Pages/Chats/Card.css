@@ -16,7 +16,7 @@ p {
   line-height: 21px;
 }
 
-.card-container {
+.request-card-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,18 +32,18 @@ p {
   height: 450px;
   max-width: 100%;
   text-align: center;
-  margin: 3rem;
+  margin: 1rem;
+  padding-top: 0.5rem;
   overflow: hidden;
 }
 
-.card-container img {
+.request-card-container img {
   border: 1px solid var(--yellow);
   border-radius: 50%;
   padding: 7px;
   height: 100px;
   width: 100px;
   margin: 1rem;
-  aspect-ratio: 1;
 }
 
 .prof-buttons {
@@ -65,8 +65,8 @@ button.primary {
 
 button.primary.ghost {
   margin: 1rem;
-  background-color: transparent;
-  color: var(--black);
+  background-color: var(--grass-green) !important;
+  color: var(--white) !important;
   transition: 0.3s ease-in-out;
 }
 
@@ -79,7 +79,7 @@ button.primary.ghost:hover {
   background-color: #ffffff27;
 }
 
-.profskills {
+.request-profskills {
   background-color: rgba(48, 88, 100, 0.284);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -92,26 +92,27 @@ button.primary.ghost:hover {
   overflow-y: auto;
 }
 
-.profskill-boxes {
-  margin: 1rem;
+.request-profskill-boxes {
   display: flex;
   flex-wrap: wrap;
 }
 
-.profskill-box {
+.request-profskill-box {
   text-align: center;
   background-color: var(--grass-green);
   color: white;
   padding: 0.5rem;
   margin-right: 1rem;
-  margin-top: 1rem;
   border-radius: 5px;
   min-width: 4rem;
-  font-size: 12px;
+}
+
+.request-skills-heading {
+  margin: 10px 0;
 }
 
 @media (max-width: 768px) {
-  .card-container {
+  .request-card-container {
     width: 50vw;
     height: 60vh;
   }
