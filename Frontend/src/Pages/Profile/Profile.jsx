@@ -40,7 +40,7 @@ const Profile = () => {
       }
     };
     getUser();
-  }, []);
+  }, [username]);
 
   const convertDate = (dateTimeString) => {
     const date = new Date(dateTimeString);

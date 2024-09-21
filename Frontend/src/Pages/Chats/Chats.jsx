@@ -73,8 +73,7 @@ const Chats = () => {
       setChatLoading(true);
       const tempUser = JSON.parse(localStorage.getItem("userInfo"));
       const { data } = await axios.get("http://localhost:8000/chat");
-      // console.log("Chats", data.data);
-      toast.success(data.message);
+
       if (tempUser?._id) {
         const temp = data.data.map((chat) => {
           return {
@@ -114,15 +113,11 @@ const Chats = () => {
       setChatMessageLoading(true);
       const { data } = await axios.get(`http://localhost:8000/message/getMessages/${chatId}`);
       setChatMessages(data.data);
-      // console.log("Chat Messages:", data.data);
       setMessage("");
-      // console.log("Chats: ", chats);
       const chatDetails = chats.find((chat) => chat.id === chatId);
       setSelectedChat(chatDetails);
-      // console.log("selectedChat", chatDetails);
-      // console.log("Data", data.message);
       socket.emit("join chat", chatId);
-      toast.success(data.message);
+
     } catch (err) {
       console.log(err);
       if (err?.response?.data?.message) {
@@ -153,8 +148,7 @@ const Chats = () => {
       socket.emit("new message", data.data);
       setChatMessages((prevState) => [...prevState, data.data]);
       setMessage("");
-      // console.log("Data", data.message);
-      toast.success(data.message);
+
     } catch (err) {
       console.log(err);
       if (err?.response?.data?.message) {
@@ -176,8 +170,7 @@ const Chats = () => {
       setRequestLoading(true);
       const { data } = await axios.get("/request/getRequests");
       setRequests(data.data);
-      console.log(data.data);
-      toast.success(data.message);
+
     } catch (err) {
       console.log(err);
       if (err?.response?.data?.message) {
