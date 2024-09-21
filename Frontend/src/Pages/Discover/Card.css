@@ -16,7 +16,7 @@ p {
   line-height: 21px;
 }
 
-.card-container {
+.discover-card-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,11 +32,12 @@ p {
   height: 450px;
   max-width: 100%;
   text-align: center;
-  margin: 3rem;
+  margin: 1rem;
+  padding-top: 0.5rem;
   overflow: hidden;
 }
 
-.card-container img {
+.discover-card-container img {
   border: 1px solid var(--yellow);
   border-radius: 50%;
   padding: 7px;
@@ -78,7 +79,7 @@ button.primary.ghost:hover {
   background-color: #ffffff27;
 }
 
-.profskills {
+.discover-profskills {
   background-color: rgba(48, 88, 100, 0.284);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -91,25 +92,27 @@ button.primary.ghost:hover {
   overflow-y: auto;
 }
 
-.profskill-boxes {
-  margin: 1rem;
+.discover-profskill-boxes {
   display: flex;
   flex-wrap: wrap;
 }
 
-.profskill-box {
+.discover-profskill-box {
   text-align: center;
   background-color: var(--grass-green);
   color: white;
   padding: 0.5rem;
   margin-right: 1rem;
-  margin-top: 1rem;
   border-radius: 5px;
   min-width: 4rem;
 }
 
+.skills-heading {
+  margin: 10px 0;
+}
+
 @media (max-width: 768px) {
-  .card-container {
+  .discover-card-container {
     width: 50vw;
     height: 50vh;
   }
