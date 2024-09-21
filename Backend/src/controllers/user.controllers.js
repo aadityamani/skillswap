@@ -11,6 +11,7 @@ import { Meeting } from "../models/meeting.model.js";
 import { google } from 'googleapis';
 import { OAuth2Client } from 'google-auth-library';
 import { confirmedMeetingBody, scheduleMeetingBody } from "../utils/constants.js";
+import {skillCategories} from "../utils/Skills.js";
 
 export const userDetailsWithoutID = asyncHandler(async (req, res) => {
   console.log("\n******** Inside userDetailsWithoutID Controller function ********");
@@ -527,45 +528,15 @@ export const uploadPic = asyncHandler(async (req, res) => {
 export const discoverUsers = asyncHandler(async (req, res) => {
   console.log("******** Inside discoverUsers Function *******");
 
-  const webDevSkills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Angular",
-    "Vue",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "SQL",
-    "NoSQL",
-  ];
-
-  const machineLearningSkills = [
-    "Python",
-    "Natural Language Processing",
-    "Deep Learning",
-    "PyTorch",
-    "Machine Learning",
-  ];
-
-  // Find all the users except the current users who are proficient in the skills that the current user wants to learn and also the the users who are proficient in the web development skills and machine learning skills in the array above
-  //
-
-  //  fetch all users except the current user
+  const webDevSkills = [...skillCategories["Frontend Development"], ...skillCategories["Backend Development"], ...skillCategories["Databases"]];
+  const machineLearningSkills = skillCategories["Machine Learning"];
 
   const users = await User.find({ username: { $ne: req.user.username } });
-
-  // now make three seperate list of the users who are proficient in the skills that the current user wants to learn, the users who are proficient in the web development skills and the users who are proficient in the machine learning skills and others also limit the size of the array to 5;
-
-  // const users = await User.find({
-  //   skillsProficientAt: { $in: req.user.skillsToLearn },
-  //   username: { $ne: req.user.username },
-  // });
 
   if (!users) {
     throw new ApiError(500, "Error in fetching users");
   }
+  const usersSelected = new Set();
   const usersToLearn = [];
   const webDevUsers = [];
   const mlUsers = [];
@@ -578,13 +549,17 @@ export const discoverUsers = asyncHandler(async (req, res) => {
   users.forEach((user) => {
     if (user.skillsProficientAt.some((skill) => req.user.skillsToLearn.includes(skill)) && usersToLearn.length < 5) {
       usersToLearn.push(user);
-    } else if (user.skillsProficientAt.some((skill) => webDevSkills.includes(skill)) && webDevUsers.length < 5) {
-      webDevUsers.push(user);
-    } else if (user.skillsProficientAt.some((skill) => machineLearningSkills.includes(skill)) && mlUsers.length < 5) {
-      mlUsers.push(user);
-    } else {
-      if (otherUsers.length < 5) otherUsers.push(user);
+      usersSelected.add(user);
     }
+    if (user.skillsProficientAt.some((skill) => webDevSkills.includes(skill)) && webDevUsers.length < 5) {
+      webDevUsers.push(user);
+      usersSelected.add(user);
+    }
+    if (user.skillsProficientAt.some((skill) => machineLearningSkills.includes(skill)) && mlUsers.length < 5) {
+      mlUsers.push(user);
+      usersSelected.add(user);
+    }
+    if (!usersSelected.has(user) && otherUsers.length < 5) otherUsers.push(user);
   });
 
   return res

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
-import { skills } from "./Skills";
+import { skills } from "../../util/Skills.js";
 import axios from "axios";
 import "./EditProfile.css";
 import Badge from "react-bootstrap/Badge";

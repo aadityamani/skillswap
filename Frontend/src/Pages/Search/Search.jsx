@@ -3,9 +3,9 @@ import { FiSearch } from 'react-icons/fi';
 import { Form, Badge } from 'react-bootstrap';
 import './Search.css';
 import axios from "axios";
-import ProfileCard from "./ProfileCard.jsx";
+import ProfileCard from "../../Components/ProfileCard/ProfileCard.jsx";
 import {toast} from "react-toastify";
-import {skills} from "../Register/Skills.js";
+import {skills} from "../../util/Skills.js";
 
 const Search = () => {
   const [isActive, setIsActive] = useState(false);
