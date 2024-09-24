@@ -12,6 +12,7 @@ import { google } from 'googleapis';
 import { OAuth2Client } from 'google-auth-library';
 import { confirmedMeetingBody, scheduleMeetingBody } from "../utils/constants.js";
 import {skillCategories} from "../utils/Skills.js";
+import {recommendSkills} from "../utils/Recommendation.js";
 
 export const userDetailsWithoutID = asyncHandler(async (req, res) => {
   console.log("\n******** Inside userDetailsWithoutID Controller function ********");
@@ -543,6 +544,8 @@ export const discoverUsers = asyncHandler(async (req, res) => {
   const otherUsers = [];
 
   // randomly suffle the users array
+  const recommendedSkills = recommendSkills(req.user.skillsProficientAt);
+  req.user.skillsToLearn.push(...recommendedSkills);
 
   users.sort(() => Math.random() - 0.5);
 
