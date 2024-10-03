@@ -78,6 +78,6 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
 
 export const handleLogout = (req, res) => {
   console.log("\n******** Inside handleLogout function ********");
-  res.clearCookie("accessToken");
+  res.clearCookie("accessToken", { httpOnly: true, secure: false, sameSite: "None" });
   return res.status(200).json(new ApiResponse(200, null, "User logged out successfully"));
 };
