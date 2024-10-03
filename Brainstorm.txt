@@ -1,5 +1,4 @@
 Frontend:
-1. Color Scheme 
 2. Design
 3. Dark Mode and Light Mode Toggle
 4. 2 options in login form: Student and Professional
@@ -9,9 +8,5 @@ Backend:
 
 Additions:
 1. Recommendation System
-2. Gmeet for meeting scheduling in email.
 3. Threshold for no of reports leading to suspension: 5
 4. Review of Suspended Accounts.
-
-TODO:
-1. Can't go to own profile if viewing another user's profile.
