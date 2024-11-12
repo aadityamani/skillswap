@@ -11,7 +11,7 @@ Time: ${time}
 
 To confirm your availability and schedule the session, please click on the following link:
 
-http://localhost:8000/user/scheduleMeet?id=${meeting._id}
+${process.env.DEPLOYED_URL}/user/scheduleMeet?id=${meeting._id}
 
 Once you confirm, both you and the requester will receive an email with the finalized details and a Google Meet link for the session.
 

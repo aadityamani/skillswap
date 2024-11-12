@@ -15,7 +15,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: process.env.GOOGLE_CALLBACK_URL,
       userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
       passReqToCallback: true,
       accessType: 'offline',
@@ -38,8 +38,10 @@ export const googleAuthHandler = passport.authenticate("google", {
   prompt: 'consent'
 });
 
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+
 export const googleAuthCallback = passport.authenticate("google", {
-  failureRedirect: "http://localhost:5173/login",
+  failureRedirect: FRONTEND_URL + "/login",
   session: false,
 });
 
@@ -54,8 +56,8 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
     await existingUser.save();
     const jwtToken = generateJWTToken_username(existingUser);
     const expiryDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
-    res.cookie("accessToken", jwtToken, { httpOnly: true, expires: expiryDate, secure: false });
-    return res.redirect(`http://localhost:5173/discover`);
+    res.cookie("accessToken", jwtToken, { httpOnly: true, expires: expiryDate, secure: false, sameSite: "None" });
+    return res.redirect(FRONTEND_URL + "/discover");
   }
 
   let unregisteredUser = await UnRegisteredUser.findOne({ email: req.user._json.email });
@@ -70,12 +72,12 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
   }
   const jwtToken = generateJWTToken_email(unregisteredUser);
   const expiryDate = new Date(Date.now() + 0.5 * 60 * 60 * 1000);
-  res.cookie("accessTokenRegistration", jwtToken, { httpOnly: true, expires: expiryDate, secure: false });
-  return res.redirect("http://localhost:5173/register");
+  res.cookie("accessTokenRegistration", jwtToken, { httpOnly: true, expires: expiryDate, secure: false, sameSite: "None" });
+  return res.redirect(FRONTEND_URL + "/register");
 });
 
 export const handleLogout = (req, res) => {
   console.log("\n******** Inside handleLogout function ********");
-  res.clearCookie("accessToken");
+  res.clearCookie("accessToken", { httpOnly: true, secure: false, sameSite: "None" });
   return res.status(200).json(new ApiResponse(200, null, "User logged out successfully"));
 };
