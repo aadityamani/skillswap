@@ -38,7 +38,7 @@ export const googleAuthHandler = passport.authenticate("google", {
   prompt: 'consent'
 });
 
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+const FRONTEND_URL = process.env.DEPLOYED_URL || "http://localhost:8000";
 
 export const googleAuthCallback = passport.authenticate("google", {
   failureRedirect: FRONTEND_URL + "/login",
@@ -56,7 +56,7 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
     await existingUser.save();
     const jwtToken = generateJWTToken_username(existingUser);
     const expiryDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
-    res.cookie("accessToken", jwtToken, { httpOnly: true, expires: expiryDate, secure: false, sameSite: "None" });
+    res.cookie("accessToken", jwtToken, { httpOnly: true, expires: expiryDate, secure: false, sameSite: "Strict" });
     return res.redirect(FRONTEND_URL + "/discover");
   }
 
@@ -72,12 +72,12 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
   }
   const jwtToken = generateJWTToken_email(unregisteredUser);
   const expiryDate = new Date(Date.now() + 0.5 * 60 * 60 * 1000);
-  res.cookie("accessTokenRegistration", jwtToken, { httpOnly: true, expires: expiryDate, secure: false, sameSite: "None" });
+  res.cookie("accessTokenRegistration", jwtToken, { httpOnly: true, expires: expiryDate, secure: false, sameSite: "Strict" });
   return res.redirect(FRONTEND_URL + "/register");
 });
 
 export const handleLogout = (req, res) => {
   console.log("\n******** Inside handleLogout function ********");
-  res.clearCookie("accessToken", { httpOnly: true, secure: false, sameSite: "None" });
+  res.clearCookie("accessToken", { httpOnly: true, secure: false, sameSite: "Strict" });
   return res.status(200).json(new ApiResponse(200, null, "User logged out successfully"));
 };

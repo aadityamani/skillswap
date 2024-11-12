@@ -1,18 +1,12 @@
 import express from "express";
-import cors from "cors";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import dotenv from "dotenv";
+import path from 'path';
 
 dotenv.config();
 const app = express();
 
-app.use(
-  cors({
-    origin: process.env.CORS_ORIGIN,
-    credentials: true,
-  })
-);
 
 app.use(express.json({ limit: "16kb" })); // to parse json in body
 app.use(express.urlencoded({ extended: true, limit: "16kb" })); // to parse url
@@ -21,6 +15,7 @@ app.use(cookieParser()); // to enable CRUD operation on browser cookies
 
 // Passport middleware
 app.use(passport.initialize());
+app.use(express.static('Frontend/dist'));
 
 // Importing routes
 import userRouter from "./routes/user.routes.js";
@@ -39,5 +34,8 @@ app.use("/message", messageRouter);
 app.use("/request", requestRouter);
 app.use("/report", reportRouter);
 app.use("/rating", ratingRouter);
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve('Frontend', 'dist', 'index.html'));
+});
 
 export { app };
