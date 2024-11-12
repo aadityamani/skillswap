@@ -72,7 +72,7 @@ const Chats = () => {
     try {
       setChatLoading(true);
       const tempUser = JSON.parse(localStorage.getItem("userInfo"));
-      const { data } = await axios.get("http://localhost:8000/chat");
+      const { data } = await axios.get(`${import.meta.env.VITE_SERVER_URL}/chat`);
 
       if (tempUser?._id) {
         const temp = data.data.map((chat) => {
@@ -111,7 +111,7 @@ const Chats = () => {
   const handleChatClick = async (chatId) => {
     try {
       setChatMessageLoading(true);
-      const { data } = await axios.get(`http://localhost:8000/message/getMessages/${chatId}`);
+      const { data } = await axios.get(`${import.meta.env.VITE_SERVER_URL}/message/getMessages/${chatId}`);
       setChatMessages(data.data);
       setMessage("");
       const chatDetails = chats.find((chat) => chat.id === chatId);
